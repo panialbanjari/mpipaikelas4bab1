@@ -1,0 +1,2202 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>MPI PAI Kelas 4 - Q.S. Al-Ḥujurāt/49:13 &amp; Hadis Keragaman</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tone.js untuk Efek Suara Edukatif Ramah Anak -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+  <!-- Google Fonts: Fredoka (Display), Nunito (Body), Amiri (Teks Arab) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-primary: #F0F9FF;
+      --bg-surface: #FFFFFF;
+      --bg-soft: #E0F2FE;
+      --brand-teal: #0D9488;
+      --brand-teal-dark: #0F766E;
+      --brand-blue: #0284C7;
+      --accent-amber: #F59E0B;
+      --accent-amber-dark: #D97706;
+      --accent-coral: #F97316;
+      --text-dark: #1E293B;
+      --text-muted: #475569;
+      --success: #16A34A;
+      --error: #DC2626;
+      --radius-card: 24px;
+      --radius-btn: 18px;
+      --transition-speed: 0.28s;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-dark);
+      margin: 0;
+      padding: 0;
+      line-height: 1.65;
+      font-size: 17px;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 10% 15%, rgba(13, 148, 136, 0.08) 0%, transparent 35%),
+        radial-gradient(circle at 90% 85%, rgba(245, 158, 11, 0.1) 0%, transparent 40%);
+    }
+
+    @media (min-width: 1280px) {
+      body {
+        font-size: 19px;
+      }
+    }
+
+    h1, h2, h3, .font-display {
+      font-family: 'Fredoka', sans-serif;
+      letter-spacing: 0.01em;
+    }
+
+    .font-arab {
+      font-family: 'Amiri', serif;
+      direction: rtl;
+      line-height: 2.3;
+    }
+
+    /* Target Sentuh FID & Mobile minimal 60x60px untuk elemen aksi */
+    .touch-target {
+      min-height: 60px;
+      min-width: 60px;
+      transition: transform var(--transition-speed) ease, background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    }
+
+    .touch-target:active {
+      transform: scale(0.96);
+    }
+
+    /* Tombol 3D Taktil Ramah Anak */
+    .btn-3d-amber {
+      background: linear-gradient(180deg, #FBBF24 0%, #F59E0B 100%);
+      color: #1E293B;
+      border-bottom: 5px solid #B45309;
+      box-shadow: 0 8px 18px rgba(245, 158, 11, 0.32);
+    }
+    .btn-3d-amber:active {
+      border-bottom-width: 2px;
+      transform: translateY(3px);
+    }
+
+    .btn-3d-teal {
+      background: linear-gradient(180deg, #14B8A6 0%, #0D9488 100%);
+      color: #FFFFFF;
+      border-bottom: 5px solid #115E59;
+      box-shadow: 0 8px 18px rgba(13, 148, 136, 0.28);
+    }
+    .btn-3d-teal:active {
+      border-bottom-width: 2px;
+      transform: translateY(3px);
+    }
+
+    .btn-3d-blue {
+      background: linear-gradient(180deg, #38BDF8 0%, #0284C7 100%);
+      color: #FFFFFF;
+      border-bottom: 5px solid #075985;
+      box-shadow: 0 8px 18px rgba(2, 132, 199, 0.25);
+    }
+    .btn-3d-blue:active {
+      border-bottom-width: 2px;
+      transform: translateY(3px);
+    }
+
+    /* Animasi Feedback Edukatif Ringan */
+    @keyframes gentleBounce {
+      0%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      70% { transform: translateY(-4px); }
+    }
+
+    @keyframes gentleShake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-7px); }
+      50% { transform: translateX(7px); }
+      75% { transform: translateX(-5px); }
+    }
+
+    @keyframes fadeSlideIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .anim-bounce { animation: gentleBounce 0.55s ease; }
+    .anim-shake { animation: gentleShake 0.45s ease; }
+    .page-enter { animation: fadeSlideIn 0.35s ease forwards; }
+
+    /* Custom Scrollbar Halus */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #E0F2FE; border-radius: 10px; }
+    ::-webkit-scrollbar-thumb { background: #7DD3FC; border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: #0284C7; }
+
+    /* Garis bantu menulis huruf hijaiyah */
+    .writing-paper {
+      background-image: repeating-linear-gradient(
+        transparent,
+        transparent 58px,
+        #BAE6FD 59px,
+        #BAE6FD 60px
+      );
+    }
+
+    /* Hide scrollbar pada menu horizontal */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- HEADER & NAVIGASI UTAMA (9 Menu Konsisten) -->
+  <header id="mainHeader" class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b-2 border-sky-100 shadow-sm">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 py-2 flex flex-col gap-2">
+      <!-- Bar Atas: Identitas Singkat & Skor Gamifikasi -->
+      <div class="flex items-center justify-between gap-2">
+        <div class="flex items-center gap-2.5">
+          <div class="w-11 h-11 rounded-2xl bg-teal-600 text-white flex items-center justify-center font-display font-bold text-xl shadow-sm">
+            📖
+          </div>
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-wider text-teal-700 bg-teal-50 px-2.5 py-0.5 rounded-full">PAI SD Kelas 4 • Fase B</span>
+            <h1 class="text-sm sm:text-base font-bold text-slate-800 leading-tight">Q.S. Al-Ḥujurāt/49:13 &amp; Keragaman</h1>
+          </div>
+        </div>
+
+        <!-- Panel Poin, Suara, & Progress -->
+        <div class="flex items-center gap-2">
+          <button id="btnToggleSound" onclick="toggleAudio()" aria-label="Suara Efek" class="touch-target !min-w-[48px] !min-h-[48px] px-3 rounded-2xl bg-sky-100 text-sky-800 font-bold flex items-center gap-1.5 border-2 border-sky-200">
+            <span id="soundIcon">🔊</span>
+            <span class="hidden sm:inline text-sm" id="soundLabel">Suara Aktif</span>
+          </button>
+          <div class="bg-amber-100 border-2 border-amber-300 px-3.5 py-1.5 rounded-2xl flex items-center gap-1.5 shadow-inner">
+            <span class="text-xl">⭐</span>
+            <span id="globalScore" class="font-display font-bold text-amber-900 text-lg">0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bar Navigasi 9 Menu Utama -->
+      <nav aria-label="Menu Utama" class="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-1">
+        <button onclick="navigateTo('beranda')" data-nav="beranda" class="nav-btn touch-target !min-h-[48px] px-3.5 py-2 rounded-2xl font-bold text-sm sm:text-base whitespace-nowrap flex items-center gap-1.5 border-2 border-transparent">
+          <span>🏠</span><span>Beranda</span>
+        </button>
+        <button onclick="navigateTo('materi')" data-nav="materi" class="nav-btn touch-target !min-h-[48px] px-3.5 py-2 rounded-2xl font-bold text-sm sm:text-base whitespace-nowrap flex items-center gap-1.5 border-2 border-transparent">
+          <span>📖</span><span>Materi</span>
+        </button>
+        <button onclick="navigateTo('aktivitas')" data-nav="aktivitas" class="nav-btn touch-target !min-h-[48px] px-3.5 py-2 rounded-2xl font-bold text-sm sm:text-base whitespace-nowrap flex items-center gap-1.5 border-2 border-transparent">
+          <span>🎯</span><span>Aktivitas</span>
+        </button>
+        <button onclick="navigateTo('game')" data-nav="game" class="nav-btn touch-target !min-h-[48px] px-3.5 py-2 rounded-2xl font-bold text-sm sm:text-base whitespace-nowrap flex items-center gap-1.5 border-2 border-transparent">
+          <span>🎮</span><span>Game</span>
+        </button>
+        <button onclick="navigateTo('latihan')" data-nav="latihan" class="nav-btn touch-target !min-h-[48px] px-3.5 py-2 rounded-2xl font-bold text-sm sm:text-base whitespace-nowrap flex items-center gap-1.5 border-2 border-transparent">
+          <span>📝</span><span>Latihan</span>
+        </button>
+        <button onclick="navigateTo('kuis')" data-nav="kuis" class="nav-btn touch-target !min-h-[48px] px-3.5 py-2 rounded-2xl font-bold text-sm sm:text-base whitespace-nowrap flex items-center gap-1.5 border-2 border-transparent">
+          <span>❓</span><span>Kuis</span>
+        </button>
+        <button onclick="navigateTo('hasil')" data-nav="hasil" class="nav-btn touch-target !min-h-[48px] px-3.5 py-2 rounded-2xl font-bold text-sm sm:text-base whitespace-nowrap flex items-center gap-1.5 border-2 border-transparent">
+          <span>🏆</span><span>Hasil</span>
+        </button>
+        <button onclick="navigateTo('refleksi')" data-nav="refleksi" class="nav-btn touch-target !min-h-[48px] px-3.5 py-2 rounded-2xl font-bold text-sm sm:text-base whitespace-nowrap flex items-center gap-1.5 border-2 border-transparent">
+          <span>💭</span><span>Refleksi</span>
+        </button>
+        <button onclick="navigateTo('petunjuk')" data-nav="petunjuk" class="nav-btn touch-target !min-h-[48px] px-3.5 py-2 rounded-2xl font-bold text-sm sm:text-base whitespace-nowrap flex items-center gap-1.5 border-2 border-transparent">
+          <span>📋</span><span>Petunjuk</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- KONTEN UTAMA DINAMIS -->
+  <main id="appContent" class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-8">
+    <!-- Konten dirender secara dinamis oleh JavaScript -->
+  </main>
+
+  <!-- FOOTER KONSISTEN DENGAN NAVIGASI CEPAT (Home, Back, Next) -->
+  <footer class="bg-white border-t-2 border-sky-100 py-4 px-4 sm:px-6 mt-auto">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-start">
+        <button onclick="navigatePrev()" id="btnFooterPrev" class="touch-target px-5 py-3 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold flex items-center gap-2 border-2 border-slate-200">
+          <span>⬅️</span><span>Sebelumnya</span>
+        </button>
+        <button onclick="navigateTo('beranda')" class="touch-target px-4 py-3 rounded-2xl bg-sky-100 text-sky-900 font-bold flex items-center gap-1.5 border-2 border-sky-200" title="Ke Beranda">
+          <span>🏠</span><span class="hidden md:inline">Beranda</span>
+        </button>
+        <button onclick="navigateNext()" id="btnFooterNext" class="touch-target px-5 py-3 rounded-2xl btn-3d-teal font-bold flex items-center gap-2">
+          <span>Selanjutnya</span><span>➡️</span>
+        </button>
+      </div>
+      <div class="text-center sm:text-right text-sm text-slate-600 font-semibold">
+        <span>Media Pembelajaran Interaktif • Disusun oleh <strong class="text-teal-700">Abu Rahmi</strong> (2026)</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL / KOTAK PESAN EDUKATIF (Pengganti alert/confirm) -->
+  <div id="customModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/60 backdrop-blur-xs p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-7 shadow-2xl border-4 border-teal-500 text-center page-enter">
+      <div id="modalMascot" class="flex justify-center mb-3"></div>
+      <h3 id="modalTitle" class="text-2xl font-bold text-slate-800 mb-2">Judul Pesan</h3>
+      <p id="modalBody" class="text-slate-600 mb-6 text-base sm:text-lg"></p>
+      <div id="modalActions" class="flex flex-wrap justify-center gap-3">
+        <button onclick="closeModal()" class="touch-target px-6 py-3 rounded-2xl btn-3d-teal font-bold text-lg w-full">
+          Baik, Mengerti! 👍
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* ==========================================================================
+       1. STATE & DATA PEMBELAJARAN (KURIKULUM MERDEKA - PAI KELAS 4 BAB 1)
+       ========================================================================== */
+    const PAGES = ['beranda', 'materi', 'aktivitas', 'game', 'latihan', 'kuis', 'hasil', 'refleksi', 'petunjuk'];
+
+    const defaultState = {
+      currentPage: 'beranda',
+      studentName: '',
+      score: 0,
+      soundEnabled: true,
+      materiTab: 0,
+      completedMateri: [false, false, false, false, false],
+      hafalanChecked: [false, false, false, false, false],
+      matchingSolved: [],
+      puzzleSolved: false,
+      gameHighScore: 0,
+      latihanAnswers: {},
+      kuisAnswers: {},
+      kuisSubmitted: false,
+      kuisStartTime: null,
+      kuisDurationSec: 0,
+      refleksi: {
+        mood: '',
+        liked: '',
+        hardPart: '',
+        nextGoal: ''
+      }
+    };
+
+    let state = loadState();
+
+    function loadState() {
+      try {
+        const saved = localStorage.getItem('mpi_pai_kls4_bab1_v1');
+        if (saved) {
+          return { ...defaultState, ...JSON.parse(saved) };
+        }
+      } catch (e) {
+        console.warn('Gagal memuat localStorage:', e);
+      }
+      return { ...defaultState };
+    }
+
+    function saveState() {
+      try {
+        localStorage.setItem('mpi_pai_kls4_bab1_v1', JSON.stringify(state));
+        document.getElementById('globalScore').textContent = state.score;
+      } catch (e) {
+        console.warn('Gagal menyimpan localStorage:', e);
+      }
+    }
+
+    function addScore(points) {
+      state.score += points;
+      saveState();
+      const scoreEl = document.getElementById('globalScore');
+      scoreEl.parentElement.classList.remove('anim-bounce');
+      void scoreEl.parentElement.offsetWidth;
+      scoreEl.parentElement.classList.add('anim-bounce');
+    }
+
+    /* ==========================================================================
+       2. SISTEM AUDIO EDUKATIF (TONE.JS & WEB SPEECH API)
+       ========================================================================== */
+    let synth = null;
+
+    function initAudio() {
+      if (!synth && typeof Tone !== 'undefined') {
+        synth = new Tone.PolySynth(Tone.Synth).toDestination();
+      }
+    }
+
+    function playSfx(type) {
+      if (!state.soundEnabled) return;
+      try {
+        initAudio();
+        if (Tone.context.state !== 'running') {
+          Tone.start();
+        }
+        const now = Tone.now();
+        if (type === 'click') {
+          synth.triggerAttackRelease('C5', '16n', now);
+        } else if (type === 'success') {
+          synth.triggerAttackRelease(['C5', 'E5', 'G5'], '8n', now);
+          synth.triggerAttackRelease('C6', '4n', now + 0.15);
+        } else if (type === 'error') {
+          synth.triggerAttackRelease(['E4', 'Eb4'], '8n', now);
+        } else if (type === 'fanfare') {
+          synth.triggerAttackRelease('C5', '8n', now);
+          synth.triggerAttackRelease('E5', '8n', now + 0.12);
+          synth.triggerAttackRelease('G5', '8n', now + 0.24);
+          synth.triggerAttackRelease('C6', '2n', now + 0.36);
+        }
+      } catch (e) {
+        // Fallback diam jika audio diblokir browser
+      }
+    }
+
+    function toggleAudio() {
+      state.soundEnabled = !state.soundEnabled;
+      updateAudioUI();
+      saveState();
+      if (state.soundEnabled) playSfx('click');
+    }
+
+    function updateAudioUI() {
+      const icon = document.getElementById('soundIcon');
+      const label = document.getElementById('soundLabel');
+      if (icon) icon.textContent = state.soundEnabled ? '🔊' : '🔇';
+      if (label) label.textContent = state.soundEnabled ? 'Suara Aktif' : 'Suara Mati';
+    }
+
+    function speakText(text, lang = 'id-ID') {
+      playSfx('click');
+      if (!state.soundEnabled) return;
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = lang;
+        utterance.rate = 0.9;
+        window.speechSynthesis.speak(utterance);
+      }
+    }
+
+    /* ==========================================================================
+       3. KARAKTER MASKOT KONSISTEN (SVG VECTOR: ZAKI & HANA)
+       ========================================================================== */
+    function getMascotSVG(expression = 'senang', size = 110) {
+      // Ekspresi: 'senang', 'berpikir', 'kaget', 'bangga'
+      let mouth = `<path d="M42 63 Q50 71 58 63" stroke="#1E293B" stroke-width="3" fill="none" stroke-linecap="round"/>`;
+      let brow = `<path d="M36 46 Q41 43 45 46" stroke="#1E293B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                  <path d="M55 46 Q59 43 64 46" stroke="#1E293B" stroke-width="2.5" fill="none" stroke-linecap="round"/>`;
+      let badge = '';
+
+      if (expression === 'berpikir') {
+        mouth = `<circle cx="53" cy="64" r="3.5" fill="#1E293B"/>`;
+        brow = `<path d="M36 44 Q41 41 45 45" stroke="#1E293B" stroke-width="2.5" fill="none"/>
+                <path d="M55 47 Q59 45 64 47" stroke="#1E293B" stroke-width="2.5" fill="none"/>`;
+        badge = `<text x="76" y="28" font-size="20">🤔</text>`;
+      } else if (expression === 'kaget') {
+        mouth = `<ellipse cx="50" cy="65" rx="5" ry="6" fill="#EF4444"/>`;
+        brow = `<path d="M36 42 Q41 38 45 42" stroke="#1E293B" stroke-width="2.5" fill="none"/>
+                <path d="M55 42 Q59 38 64 42" stroke="#1E293B" stroke-width="2.5" fill="none"/>`;
+        badge = `<text x="76" y="28" font-size="20">✨</text>`;
+      } else if (expression === 'bangga') {
+        mouth = `<path d="M40 61 Q50 74 60 61 Z" fill="#EF4444" stroke="#1E293B" stroke-width="2"/>`;
+        badge = `<text x="74" y="28" font-size="20">🌟</text>`;
+      }
+
+      return `
+        <svg width="${size}" height="${size}" viewBox="0 0 100 100" class="shrink-0 drop-shadow-sm" aria-label="Maskot Zaki">
+          <!-- Lingkaran Latar -->
+          <circle cx="50" cy="50" r="46" fill="#CCFBF1" stroke="#0D9488" stroke-width="3"/>
+          <!-- Baju Koko Biru Cerah -->
+          <path d="M24 92 C24 75 76 75 76 92 Z" fill="#0284C7"/>
+          <path d="M44 77 L50 86 L56 77" fill="#FFFFFF"/>
+          <!-- Wajah -->
+          <circle cx="50" cy="53" r="22" fill="#FDE68A"/>
+          <!-- Pipi Merona -->
+          <circle cx="37" cy="58" r="3.5" fill="#FCA5A5" opacity="0.7"/>
+          <circle cx="63" cy="58" r="3.5" fill="#FCA5A5" opacity="0.7"/>
+          <!-- Mata -->
+          <circle cx="41" cy="51" r="3" fill="#1E293B"/>
+          <circle cx="59" cy="51" r="3" fill="#1E293B"/>
+          <circle cx="42" cy="50" r="1" fill="#FFFFFF"/>
+          <circle cx="60" cy="50" r="1" fill="#FFFFFF"/>
+          ${brow}
+          ${mouth}
+          <!-- Peci Hijau Toska -->
+          <path d="M28 40 C28 24 72 24 72 40 Z" fill="#0F766E"/>
+          <rect x="28" y="37" width="44" height="5" rx="2" fill="#F59E0B"/>
+          ${badge}
+        </svg>
+      `;
+    }
+
+    /* ==========================================================================
+       4. MODAL & NAVIGASI HALAMAN
+       ========================================================================== */
+    function showModal(title, body, expression = 'senang', customButtonsHTML = null) {
+      document.getElementById('modalMascot').innerHTML = getMascotSVG(expression, 90);
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalBody').innerHTML = body;
+      const actions = document.getElementById('modalActions');
+      if (customButtonsHTML) {
+        actions.innerHTML = customButtonsHTML;
+      } else {
+        actions.innerHTML = `
+          <button onclick="closeModal()" class="touch-target px-6 py-3 rounded-2xl btn-3d-teal font-bold text-lg w-full">
+            Baik, Mengerti! 👍
+          </button>
+        `;
+      }
+      const modal = document.getElementById('customModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeModal() {
+      playSfx('click');
+      const modal = document.getElementById('customModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function navigateTo(page) {
+      if (!PAGES.includes(page)) return;
+      playSfx('click');
+      state.currentPage = page;
+      if (page === 'kuis' && !state.kuisSubmitted && !state.kuisStartTime) {
+        state.kuisStartTime = Date.now();
+      }
+      saveState();
+      renderApp();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function navigatePrev() {
+      const idx = PAGES.indexOf(state.currentPage);
+      if (idx > 0) navigateTo(PAGES[idx - 1]);
+    }
+
+    function navigateNext() {
+      const idx = PAGES.indexOf(state.currentPage);
+      if (idx < PAGES.length - 1) navigateTo(PAGES[idx + 1]);
+    }
+
+    function updateNavHighlight() {
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        const target = btn.getAttribute('data-nav');
+        if (target === state.currentPage) {
+          btn.className = 'nav-btn touch-target !min-h-[48px] px-3.5 py-2 rounded-2xl font-extrabold text-sm sm:text-base whitespace-nowrap flex items-center gap-1.5 bg-teal-600 text-white shadow-md border-2 border-teal-700';
+        } else {
+          btn.className = 'nav-btn touch-target !min-h-[48px] px-3.5 py-2 rounded-2xl font-bold text-sm sm:text-base whitespace-nowrap flex items-center gap-1.5 bg-slate-50 text-slate-700 hover:bg-sky-100 border-2 border-slate-200';
+        }
+      });
+
+      const idx = PAGES.indexOf(state.currentPage);
+      const prevBtn = document.getElementById('btnFooterPrev');
+      const nextBtn = document.getElementById('btnFooterNext');
+      if (prevBtn) prevBtn.disabled = idx === 0;
+      if (prevBtn) prevBtn.style.opacity = idx === 0 ? '0.45' : '1';
+      if (nextBtn) nextBtn.disabled = idx === PAGES.length - 1;
+      if (nextBtn) nextBtn.style.opacity = idx === PAGES.length - 1 ? '0.45' : '1';
+    }
+
+    /* ==========================================================================
+       5. RENDER HALAMAN 1: BERANDA (COVER + APERSEPSI & PEMANTIK)
+       ========================================================================== */
+    function renderBeranda() {
+      return `
+        <div class="space-y-8 page-enter">
+          <!-- COVER UTAMA MEDIA PEMBELAJARAN -->
+          <section class="relative overflow-hidden rounded-[28px] bg-gradient-to-br from-teal-600 via-teal-700 to-sky-800 text-white p-6 sm:p-10 shadow-xl border-4 border-teal-400/50">
+            <!-- Dekorasi Motif Geometris Islami Lembut -->
+            <div class="absolute -right-12 -top-12 w-64 h-64 rounded-full bg-amber-400/20 blur-xl pointer-events-none"></div>
+            <div class="absolute -left-12 -bottom-12 w-72 h-72 rounded-full bg-sky-300/20 blur-xl pointer-events-none"></div>
+
+            <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <!-- Kolom Kiri: Judul & Identitas -->
+              <div class="lg:col-span-7 space-y-5 text-center lg:text-left">
+                <div class="inline-flex flex-wrap items-center justify-center lg:justify-start gap-2">
+                  <span class="px-4 py-1.5 rounded-full bg-amber-400 text-slate-900 font-extrabold text-sm shadow-xs">
+                    Pendidikan Agama Islam &amp; Budi Pekerti
+                  </span>
+                  <span class="px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-xs text-white font-bold text-sm">
+                    SD Kelas 4 • Fase B
+                  </span>
+                </div>
+
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight drop-shadow-xs">
+                  Bab 1: Mari Kita Mengaji dan Mengkaji <span class="text-amber-300">Q.S. Al-Ḥujurāt/49:13</span> &amp; Hadis Keragaman
+                </h1>
+
+                <p class="text-sky-100 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0">
+                  Belajar membaca tartil, memahami pesan indah keragaman sebagai sunatullah, menulis kaligrafi, menghafal, serta mengamalkannya dengan gembira!
+                </p>
+
+                <!-- Input Nama Siswa (Personalisasi) -->
+                <div class="bg-white/15 backdrop-blur-xs p-4 rounded-2xl border border-white/25 max-w-md mx-auto lg:mx-0">
+                  <label for="inputStudentName" class="block text-sm font-bold text-amber-200 mb-1.5">
+                    ✍️ Tuliskan Nama Panggilanmu Sebelum Mulai:
+                  </label>
+                  <input 
+                    type="text" 
+                    id="inputStudentName" 
+                    value="${state.studentName}" 
+                    onchange="updateStudentName(this.value)"
+                    placeholder="Contoh: Ahmad / Aisyah..." 
+                    class="w-full px-4 py-3 rounded-xl text-slate-900 font-bold text-base focus:outline-none focus:ring-4 focus:ring-amber-400"
+                  />
+                </div>
+
+                <!-- Tombol MULAI Besar & Kontras -->
+                <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                  <button onclick="startLearning()" class="touch-target px-8 py-4 rounded-2xl btn-3d-amber font-display font-bold text-xl sm:text-2xl flex items-center gap-3 cursor-pointer">
+                    <span>🚀</span>
+                    <span>MULAI BELAJAR</span>
+                  </button>
+                  <button onclick="navigateTo('petunjuk')" class="touch-target px-5 py-4 rounded-2xl bg-white/20 hover:bg-white/30 text-white font-bold text-base flex items-center gap-2 border-2 border-white/40">
+                    <span>📋</span>
+                    <span>Cara Penggunaan</span>
+                  </button>
+                </div>
+
+                <div class="pt-2 text-sm text-sky-200 font-semibold">
+                  👨‍🏫 Penyusun Media: <strong class="text-white">Abu Rahmi</strong> • Alokasi Waktu: 2 x 35 Menit
+                </div>
+              </div>
+
+              <!-- Kolom Kanan: Ilustrasi Vektor Edukatif Keragaman Anak Nusantara -->
+              <div class="lg:col-span-5 flex justify-center">
+                <div class="bg-white/95 rounded-3xl p-5 shadow-2xl border-4 border-amber-300 max-w-sm w-full text-center">
+                  <svg viewBox="0 0 320 230" class="w-full h-auto rounded-2xl" aria-label="Ilustrasi Anak Indonesia Beragam Suku dan Budaya">
+                    <!-- Langit & Masjid Latar -->
+                    <rect width="320" height="230" rx="18" fill="#E0F2FE"/>
+                    <circle cx="270" cy="42" r="22" fill="#FDE047"/>
+                    <!-- Siluet Kubah & Menara -->
+                    <path d="M120 110 Q160 55 200 110 Z" fill="#0D9488"/>
+                    <rect x="125" y="110" width="70" height="55" fill="#14B8A6"/>
+                    <rect x="105" y="75" width="12" height="90" fill="#0F766E"/>
+                    <path d="M103 75 L111 60 L119 75 Z" fill="#F59E0B"/>
+                    <!-- Rumput Hijau -->
+                    <path d="M0 160 Q160 140 320 160 L320 230 L0 230 Z" fill="#86EFAC"/>
+                    
+                    <!-- Anak 1 (Kiri - Baju Adat Merah/Batik) -->
+                    <circle cx="80" cy="125" r="20" fill="#FDE68A"/>
+                    <path d="M60 120 Q80 100 100 120 Z" fill="#1E293B"/>
+                    <circle cx="74" cy="124" r="2.5" fill="#1E293B"/>
+                    <circle cx="86" cy="124" r="2.5" fill="#1E293B"/>
+                    <path d="M74 132 Q80 138 86 132" stroke="#1E293B" stroke-width="2.5" fill="none"/>
+                    <rect x="62" y="146" width="36" height="45" rx="10" fill="#F97316"/>
+
+                    <!-- Anak 2 (Tengah - Hana Berjilbab Kuning) -->
+                    <circle cx="160" cy="120" r="23" fill="#FDE68A"/>
+                    <path d="M135 125 C135 92 185 92 185 125 C185 145 175 152 160 152 C145 152 135 145 135 125 Z" fill="#FBBF24"/>
+                    <circle cx="160" cy="122" r="17" fill="#FDE68A"/>
+                    <circle cx="154" cy="120" r="2.5" fill="#1E293B"/>
+                    <circle cx="166" cy="120" r="2.5" fill="#1E293B"/>
+                    <path d="M153 128 Q160 135 167 128" stroke="#1E293B" stroke-width="2.5" fill="none"/>
+                    <rect x="140" y="148" width="40" height="48" rx="12" fill="#0D9488"/>
+
+                    <!-- Anak 3 (Kanan - Zaki Berpeci & Kulit Sawo Matang Gelap) -->
+                    <circle cx="240" cy="125" r="20" fill="#D97706"/>
+                    <path d="M220 116 C220 102 260 102 260 116 Z" fill="#0F766E"/>
+                    <circle cx="234" cy="124" r="2.5" fill="#1E293B"/>
+                    <circle cx="246" cy="124" r="2.5" fill="#1E293B"/>
+                    <path d="M234 132 Q240 138 246 132" stroke="#1E293B" stroke-width="2.5" fill="none"/>
+                    <rect x="222" y="146" width="36" height="45" rx="10" fill="#0284C7"/>
+
+                    <!-- Tangan Saling Bergandengan -->
+                    <path d="M98 162 L140 162" stroke="#FDE68A" stroke-width="8" stroke-linecap="round"/>
+                    <path d="M180 162 L222 162" stroke="#FDE68A" stroke-width="8" stroke-linecap="round"/>
+                  </svg>
+                  <p class="mt-3 text-slate-800 font-display font-bold text-lg">
+                    "Berbeda Suku &amp; Bangsa untuk Saling Mengenal"
+                  </p>
+                  <span class="text-xs font-bold text-teal-700 bg-teal-50 px-3 py-1 rounded-full inline-block mt-1">
+                    Litata'ārafū • Sunatullah yang Indah
+                  </span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- APERSEPSI & PERTANYAAN PEMANTIK (VISUAL STORYTELLING) -->
+          <section class="bg-white rounded-[26px] p-6 sm:p-8 shadow-md border-2 border-sky-100">
+            <div class="flex flex-col md:flex-row items-center gap-6">
+              ${getMascotSVG('berpikir', 120)}
+              <div class="space-y-3 flex-1">
+                <span class="px-3.5 py-1 rounded-full bg-amber-100 text-amber-900 font-extrabold text-sm">
+                  💡 Apersepsi &amp; Pertanyaan Pemantik
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-800">
+                  Coba Perhatikan Teman-Teman di Kelasmu!
+                </h2>
+                <p class="text-slate-700">
+                  Ada yang berasal dari suku Jawa, Sunda, Banjar, Bugis, Batak, Papua, dan lainnya. Ada yang berkulit putih, sawo matang, berambut lurus, maupun ikal. <strong>Mengapa Allah Swt. menciptakan kita berbeda-beda?</strong>
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                  <button onclick="answerPemantik(1)" class="touch-target p-3.5 rounded-2xl bg-sky-50 hover:bg-sky-100 border-2 border-sky-200 text-left font-bold text-slate-800 flex items-center gap-2.5">
+                    <span class="text-2xl">🤝</span>
+                    <span>Agar saling mengenal &amp; menolong</span>
+                  </button>
+                  <button onclick="answerPemantik(2)" class="touch-target p-3.5 rounded-2xl bg-sky-50 hover:bg-sky-100 border-2 border-sky-200 text-left font-bold text-slate-800 flex items-center gap-2.5">
+                    <span class="text-2xl">😤</span>
+                    <span>Agar saling mengejek perbedaan</span>
+                  </button>
+                  <button onclick="answerPemantik(3)" class="touch-target p-3.5 rounded-2xl bg-sky-50 hover:bg-sky-100 border-2 border-sky-200 text-left font-bold text-slate-800 flex items-center gap-2.5">
+                    <span class="text-2xl">🌍</span>
+                    <span>Tanda kebesaran Allah Swt.</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- TUJUAN PEMBELAJARAN RINGKAS -->
+          <section class="bg-teal-50/80 rounded-[26px] p-6 sm:p-8 border-2 border-teal-200">
+            <h3 class="text-xl sm:text-2xl font-bold text-teal-900 mb-4 flex items-center gap-2">
+              <span>🎯</span><span>Target Belajar Kita Hari Ini:</span>
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div class="bg-white p-4 rounded-2xl shadow-xs border border-teal-100 flex items-start gap-3">
+                <span class="text-2xl">🗣️</span>
+                <p class="text-sm sm:text-base font-semibold text-slate-700">Membaca Q.S. Al-Ḥujurāt/49:13 &amp; Hadis Keragaman dengan tartil.</p>
+              </div>
+              <div class="bg-white p-4 rounded-2xl shadow-xs border border-teal-100 flex items-start gap-3">
+                <span class="text-2xl">💎</span>
+                <p class="text-sm sm:text-base font-semibold text-slate-700">Menjelaskan &amp; memaparkan pesan pokok tentang keragaman dan takwa.</p>
+              </div>
+              <div class="bg-white p-4 rounded-2xl shadow-xs border border-teal-100 flex items-start gap-3">
+                <span class="text-2xl">✍️</span>
+                <p class="text-sm sm:text-base font-semibold text-slate-700">Menulis dan menghafal Q.S. Al-Ḥujurāt/49:13 serta Hadis Keragaman dengan lancar.</p>
+              </div>
+            </div>
+          </section>
+        </div>
+      `;
+    }
+
+    function updateStudentName(val) {
+      state.studentName = val.trim();
+      saveState();
+    }
+
+    function startLearning() {
+      const input = document.getElementById('inputStudentName');
+      if (input && input.value.trim()) {
+        state.studentName = input.value.trim();
+        saveState();
+      }
+      navigateTo('materi');
+    }
+
+    function answerPemantik(choice) {
+      if (choice === 1 || choice === 3) {
+        playSfx('success');
+        addScore(10);
+        showModal(
+          'Masya Allah, Jawabanmu Tepat! (+10 Poin)',
+          'Benar sekali! Perbedaan suku, bangsa, dan warna kulit adalah <strong>sunatullah</strong> (ketetapan Allah) agar kita <em>saling mengenal</em> (<em>litata\'ārafū</em>) dan mengagumi kebesaran Allah Swt. Yuk lanjut ke Materi!',
+          'bangga'
+        );
+      } else {
+        playSfx('error');
+        showModal(
+          'Coba Pikirkan Lagi Yuk!',
+          'Mengejek teman yang berbeda justru dilarang oleh Allah Swt. dan Rasulullah saw. Coba pilih jawaban lain yang mencerminkan akhlak terpuji!',
+          'berpikir'
+        );
+      }
+    }
+
+    /* ==========================================================================
+       6. RENDER HALAMAN 2: MATERI INTI (5 SUB-BAB A, B, C, D, E)
+       ========================================================================== */
+    const MATERI_SECTIONS = [
+      { code: 'A', title: 'Membaca Q.S. Al-Ḥujurāt/49:13', icon: '🗣️' },
+      { code: 'B', title: 'Memahami Pesan Pokok', icon: '💡' },
+      { code: 'C', title: 'Menulis Ayat', icon: '✍️' },
+      { code: 'D', title: 'Menghafal Ayat', icon: '🧠' },
+      { code: 'E', title: 'Hadis tentang Keragaman', icon: '🤝' }
+    ];
+
+    const AYAT_CHUNKS = [
+      {
+        arab: 'يٰٓاَيُّهَا النَّاسُ اِنَّا خَلَقْنٰكُمْ مِّنْ ذَكَرٍ وَّاُنْثٰى',
+        latin: 'Yā ayyuhan-nāsu innā khalaqnākum min żakariw wa unṡā',
+        arti: 'Wahai manusia! Sungguh, Kami telah menciptakan kamu dari seorang laki-laki dan seorang perempuan,',
+        tajwid: 'Mad Jaiz Munfasil (يٰٓاَيُّهَا), Gunnah (النَّاسُ / اِنَّا), Idgam Bighunnah (خَلَقْنٰكُمْ مِّنْ), Ikhfa (مِّنْ ذَكَرٍ)'
+      },
+      {
+        arab: 'وَجَعَلْنٰكُمْ شُعُوْبًا وَّقَبَاۤىِٕلَ لِتَعَارَفُوْا ۚ',
+        latin: 'wa ja‘alnākum syu‘ūbaw wa qabā’ila lita‘ārafū',
+        arti: 'kemudian Kami jadikan kamu berbangsa-bangsa dan bersuku-suku agar kamu saling mengenal.',
+        tajwid: 'Izhar Syafawi (وَجَعَلْنٰكُمْ شُ), Idgam Bighunnah (شُعُوْبًا وَّ), Mad Wajib Muttasil (وَّقَبَاۤىِٕلَ)'
+      },
+      {
+        arab: 'اِنَّ اَكْرَمَكُمْ عِنْدَ اللّٰهِ اَتْقٰىكُمْ ۗ',
+        latin: 'Inna akramakum ‘indallāhi atqākum',
+        arti: 'Sesungguhnya yang paling mulia di antara kamu di sisi Allah ialah orang yang paling bertakwa.',
+        tajwid: 'Gunnah (اِنَّ), Izhar Syafawi (اَكْرَمَكُمْ عِنْدَ), Ikhfa (عِنْدَ), Tafkhim (اللّٰهِ)'
+      },
+      {
+        arab: 'اِنَّ اللّٰهَ عَلِيْمٌ خَبِيْرٌ',
+        latin: 'Innallāha ‘alīmun khabīr',
+        arti: 'Sungguh, Allah Maha Mengetahui, Mahateliti.',
+        tajwid: 'Gunnah (اِنَّ), Izhar Halqi (عَلِيْمٌ خَبِيْرٌ), Mad Arid Lissukun (خَبِيْرٌ)'
+      }
+    ];
+
+    function renderMateri() {
+      const activeTab = state.materiTab;
+      let tabContent = '';
+
+      if (activeTab === 0) {
+        // A. MEMBACA Q.S. AL-HUJURAT/49:13
+        tabContent = `
+          <div class="space-y-6">
+            <div class="bg-amber-50 border-2 border-amber-200 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div class="flex items-center gap-3">
+                <span class="text-3xl">🎧</span>
+                <div>
+                  <h4 class="font-bold text-amber-950">Panduan Membaca Tartil</h4>
+                  <p class="text-sm text-amber-900">Awali dengan <em>Ta'awuz</em> dan <em>Basmalah</em>. Klik tombol speaker pada setiap potongan ayat!</p>
+                </div>
+              </div>
+              <button onclick="speakText('Auzubillahi minasy syaitanir rajim. Bismillahir rahmanir rahim. Ya ayyuhan nasu inna khalaqnakum min zakariw wa unsa wa jaalnakum syuubaw wa qabaila litaarafu. Inna akramakum indallahi atqakum. Innallaha alimun khabir.', 'id-ID')" class="touch-target px-5 py-3 rounded-2xl btn-3d-amber font-bold flex items-center gap-2 shrink-0">
+                <span>🔊</span><span>Dengarkan Bacaan Lengkap</span>
+              </button>
+            </div>
+
+            <!-- Ayat Lengkap -->
+            <div class="bg-gradient-to-b from-teal-50 to-white border-2 border-teal-200 rounded-3xl p-6 text-center shadow-xs">
+              <span class="inline-block px-4 py-1 rounded-full bg-teal-600 text-white text-sm font-bold mb-4">
+                Q.S. Al-Ḥujurāt / 49 : 13
+              </span>
+              <p class="font-arab text-3xl sm:text-4xl lg:text-5xl text-slate-900 font-bold leading-loose">
+                يٰٓاَيُّهَا النَّاسُ اِنَّا خَلَقْنٰكُمْ مِّنْ ذَكَرٍ وَّاُنْثٰى وَجَعَلْنٰكُمْ شُعُوْبًا وَّقَبَاۤىِٕلَ لِتَعَارَفُوْا ۚ اِنَّ اَكْرَمَكُمْ عِنْدَ اللّٰهِ اَتْقٰىكُمْ ۗ اِنَّ اللّٰهَ عَلِيْمٌ خَبِيْرٌ
+              </p>
+            </div>
+
+            <!-- Potongan Ayat Per Bagian (Chunking) -->
+            <h4 class="font-display font-bold text-xl text-slate-800">🧩 Belajar Membaca &amp; Tajwid Per Potongan:</h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              ${AYAT_CHUNKS.map((chunk, i) => `
+                <div class="bg-white border-2 border-sky-100 rounded-2xl p-5 shadow-xs flex flex-col justify-between gap-3">
+                  <div>
+                    <div class="flex items-center justify-between mb-2">
+                      <span class="px-3 py-1 rounded-full bg-sky-100 text-sky-900 font-bold text-xs">Potongan ${i + 1}</span>
+                      <button onclick="speakText('${chunk.latin}', 'id-ID')" class="touch-target !min-w-[48px] !min-h-[48px] px-3 rounded-xl bg-teal-100 text-teal-800 font-bold text-sm flex items-center gap-1">
+                        <span>🔊</span><span>Lafalkan</span>
+                      </button>
+                    </div>
+                    <p class="font-arab text-2xl sm:text-3xl text-right text-slate-900 font-bold my-2">${chunk.arab}</p>
+                    <p class="text-teal-700 font-bold italic text-sm sm:text-base">${chunk.latin}</p>
+                    <p class="text-slate-600 text-sm mt-1">"${chunk.arti}"</p>
+                  </div>
+                  <div class="bg-amber-50 p-3 rounded-xl border border-amber-200 text-xs sm:text-sm text-amber-950">
+                    <strong>🔍 Hukum Tajwid:</strong> ${chunk.tajwid}
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      } else if (activeTab === 1) {
+        // B. MEMAHAMI PESAN POKOK Q.S. AL-HUJURAT/49:13
+        tabContent = `
+          <div class="space-y-6">
+            <div class="flex items-center gap-4 bg-sky-50 p-4 rounded-2xl border-2 border-sky-200">
+              ${getMascotSVG('senang', 80)}
+              <div>
+                <h4 class="font-bold text-lg text-sky-950">Apa Pesan Utama Allah Swt. dalam Ayat Ini?</h4>
+                <p class="text-slate-700 text-sm sm:text-base">Klik setiap kartu pesan di bawah ini untuk melihat contoh penerapannya dalam kehidupan sehari-hari!</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div class="bg-white border-2 border-teal-200 rounded-3xl p-6 shadow-xs space-y-3">
+                <div class="w-14 h-14 rounded-2xl bg-teal-100 text-teal-700 flex items-center justify-center text-3xl">👨‍👩‍👧‍👦</div>
+                <h4 class="text-xl font-bold text-slate-800">1. Manusia Berasal dari Keturunan yang Sama</h4>
+                <p class="text-slate-600">Semua manusia diciptakan Allah Swt. dari seorang laki-laki (Nabi Adam a.s.) dan seorang perempuan (Hawa). Jadi, semua manusia adalah bersaudara!</p>
+                <div class="bg-teal-50 p-3 rounded-xl text-sm text-teal-900 font-semibold">
+                  📌 Contoh: Tidak merasa lebih tinggi derajatnya dari teman yang berbeda daerah.
+                </div>
+              </div>
+
+              <div class="bg-white border-2 border-amber-200 rounded-3xl p-6 shadow-xs space-y-3">
+                <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-3xl">🌏</div>
+                <h4 class="text-xl font-bold text-slate-800">2. Keragaman adalah Sunatullah</h4>
+                <p class="text-slate-600">Allah menciptakan manusia berbangsa-bangsa dan bersuku-suku bukan untuk bermusuhan, melainkan untuk <strong>saling mengenal</strong> (<em>litata'ārafū</em>) dan bekerja sama.</p>
+                <div class="bg-amber-50 p-3 rounded-xl text-sm text-amber-900 font-semibold">
+                  📌 Contoh: Berteman akrab dengan teman dari berbagai suku dan budaya di sekolah.
+                </div>
+              </div>
+
+              <div class="bg-white border-2 border-sky-200 rounded-3xl p-6 shadow-xs space-y-3">
+                <div class="w-14 h-14 rounded-2xl bg-sky-100 text-sky-700 flex items-center justify-center text-3xl">🌟</div>
+                <h4 class="text-xl font-bold text-slate-800">3. Kemuliaan Diukur dari Ketakwaan</h4>
+                <p class="text-slate-600">Allah Swt. tidak memandang kekayaan, jabatan, atau warna kulit. Manusia paling mulia di sisi Allah adalah yang <strong>paling bertakwa</strong> (rajin ibadah &amp; berakhlak baik).</p>
+                <div class="bg-sky-50 p-3 rounded-xl text-sm text-sky-900 font-semibold">
+                  📌 Contoh: Rajin salat tepat waktu, jujur, dan suka menolong sesama.
+                </div>
+              </div>
+
+              <div class="bg-white border-2 border-orange-200 rounded-3xl p-6 shadow-xs space-y-3">
+                <div class="w-14 h-14 rounded-2xl bg-orange-100 text-orange-700 flex items-center justify-center text-3xl">👁️</div>
+                <h4 class="text-xl font-bold text-slate-800">4. Allah Maha Mengetahui &amp; Mahateliti</h4>
+                <p class="text-slate-600">Allah Swt. mengetahui segala isi hati dan amal perbuatan kita, baik yang tampak maupun yang tersembunyi.</p>
+                <div class="bg-orange-50 p-3 rounded-xl text-sm text-orange-900 font-semibold">
+                  📌 Contoh: Tetap berbuat baik dan menghormati teman meski tidak dilihat guru.
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      } else if (activeTab === 2) {
+        // C. MENULIS Q.S. AL-HUJURAT/49:13 (PAPAN TULIS INTERAKTIF)
+        tabContent = `
+          <div class="space-y-6">
+            <div class="bg-teal-50 border-2 border-teal-200 rounded-2xl p-4">
+              <h4 class="font-bold text-lg text-teal-900 flex items-center gap-2">
+                <span>✍️</span><span>Kaidah &amp; Latihan Menulis Q.S. Al-Ḥujurāt/49:13</span>
+              </h4>
+              <p class="text-slate-700 text-sm sm:text-base mt-1">
+                Ingat! Menulis huruf Arab dimulai dari <strong>kanan ke kiri</strong>. Perhatikan huruf yang ditulis di atas garis dan huruf yang menjuntai ke bawah garis (seperti ن، ق، ل، ي).
+              </p>
+            </div>
+
+            <!-- Contoh Kaligrafi yang Ditiru -->
+            <div class="bg-white border-2 border-sky-200 rounded-3xl p-5 text-center">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-sky-700">Contoh Tulisan yang Ditiru:</span>
+              <p class="font-arab text-3xl sm:text-4xl text-slate-900 font-bold mt-2">
+                وَجَعَلْنٰكُمْ شُعُوْبًا وَّقَبَاۤىِٕلَ لِتَعَارَفُوْا ۚ اِنَّ اَكْرَمَكُمْ عِنْدَ اللّٰهِ اَتْقٰىكُمْ
+              </p>
+            </div>
+
+            <!-- Kanvas Latihan Menulis Sentuh / Mouse (Ramah FID & Tablet) -->
+            <div class="bg-white border-4 border-amber-300 rounded-3xl p-4 shadow-md">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                <span class="font-bold text-slate-800">🖌️ Papan Latihan Menulis (Gunakan Jari atau Stylus/Mouse):</span>
+                <div class="flex gap-2">
+                  <button onclick="setPenColor('#0F172A')" class="touch-target !min-w-[48px] !min-h-[48px] px-3 rounded-xl bg-slate-900 text-white font-bold text-xs">Hitam</button>
+                  <button onclick="setPenColor('#0D9488')" class="touch-target !min-w-[48px] !min-h-[48px] px-3 rounded-xl bg-teal-600 text-white font-bold text-xs">Hijau</button>
+                  <button onclick="clearWritingCanvas()" class="touch-target !min-w-[48px] !min-h-[48px] px-4 rounded-xl bg-rose-100 text-rose-800 border-2 border-rose-300 font-bold text-sm">
+                    🗑️ Hapus
+                  </button>
+                </div>
+              </div>
+              <div class="relative w-full h-56 sm:h-64 rounded-2xl border-2 border-sky-200 overflow-hidden writing-paper bg-sky-50/30">
+                <canvas id="writingCanvas" class="w-full h-full touch-none cursor-crosshair"></canvas>
+              </div>
+              <div class="mt-3 flex justify-end">
+                <button onclick="finishWritingPractice()" class="touch-target px-5 py-3 rounded-2xl btn-3d-teal font-bold text-base">
+                  ✅ Saya Sudah Berlatih Menulis (+15 Poin)
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      } else if (activeTab === 3) {
+        // D. MENGHAFAL Q.S. AL-HUJURAT/49:13 (CHECKLIST MANDIRI BERTAHAP)
+        const allChecked = state.hafalanChecked.every(Boolean);
+        tabContent = `
+          <div class="space-y-6">
+            <div class="bg-amber-50 border-2 border-amber-200 rounded-2xl p-4 flex items-center gap-4">
+              ${getMascotSVG('bangga', 80)}
+              <div>
+                <h4 class="font-bold text-lg text-amber-950">Metode Menghafal Bertahap (Tikrar)</h4>
+                <p class="text-slate-700 text-sm sm:text-base">
+                  Bacalah setiap potongan 3–5 kali sambil melihat teks, lalu tutup matamu dan ucapkan tanpa melihat. Beri tanda centang jika sudah hafal!
+                </p>
+              </div>
+            </div>
+
+            <div class="space-y-3">
+              ${AYAT_CHUNKS.map((chunk, idx) => `
+                <div class="bg-white border-2 ${state.hafalanChecked[idx] ? 'border-green-500 bg-green-50/40' : 'border-slate-200'} rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 transition-all">
+                  <div class="text-center sm:text-right flex-1 w-full">
+                    <p class="font-arab text-2xl sm:text-3xl text-slate-900 font-bold">${chunk.arab}</p>
+                    <p class="text-sm text-slate-600 text-center sm:text-left mt-1">${chunk.latin}</p>
+                  </div>
+                  <div class="flex items-center gap-2 shrink-0">
+                    <button onclick="speakText('${chunk.latin}', 'id-ID')" class="touch-target !min-w-[48px] !min-h-[48px] px-3 rounded-xl bg-sky-100 text-sky-900 font-bold">
+                      🔊
+                    </button>
+                    <button onclick="toggleHafalan(${idx})" class="touch-target px-4 py-3 rounded-2xl font-bold text-sm sm:text-base border-2 ${state.hafalanChecked[idx] ? 'bg-green-600 text-white border-green-700' : 'bg-slate-100 text-slate-700 border-slate-300'}">
+                      ${state.hafalanChecked[idx] ? '✓ Sudah Hafal' : '⬜ Tandai Hafal'}
+                    </button>
+                  </div>
+                </div>
+              `).join('')}
+
+              <!-- Ceklis Hafalan Gabungan Lengkap -->
+              <div class="bg-teal-50 border-2 ${state.hafalanChecked[4] ? 'border-green-600' : 'border-teal-300'} rounded-2xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div>
+                  <h5 class="font-bold text-lg text-teal-950">🏆 Tantangan Hafalan Utuh (Ayat 13 Lengkap)</h5>
+                  <p class="text-sm text-teal-800">Gabungkan potongan 1 sampai 4 dengan lancar dan tartil!</p>
+                </div>
+                <button onclick="toggleHafalan(4)" class="touch-target px-5 py-3 rounded-2xl font-bold ${state.hafalanChecked[4] ? 'bg-green-600 text-white' : 'btn-3d-amber'}">
+                  ${state.hafalanChecked[4] ? '✓ Hafal Lancar!' : '🌟 Saya Hafal Utuh!'}
+                </button>
+              </div>
+            </div>
+
+            ${allChecked ? `
+              <div class="bg-green-100 border-2 border-green-500 rounded-2xl p-4 text-center text-green-900 font-bold">
+                🎉 Masya Allah! Kamu sudah menandai semua bagian hafalan Q.S. Al-Ḥujurāt/49:13!
+              </div>
+            ` : ''}
+          </div>
+        `;
+      } else if (activeTab === 4) {
+        // E. HADIS TENTANG KERAGAMAN
+        tabContent = `
+          <div class="space-y-6">
+            <div class="bg-gradient-to-br from-sky-50 to-teal-50 border-2 border-teal-200 rounded-3xl p-6 text-center space-y-4">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <span class="px-4 py-1 rounded-full bg-teal-600 text-white font-bold text-sm">Hadis tentang Keragaman (HR. Ahmad)</span>
+                <button onclick="speakText('Innal-laha la yanzuru ila suwarikum wa amwalikum, walakin yanzuru ila qulubikum wa amalikum.', 'id-ID')" class="touch-target px-4 py-2.5 rounded-2xl btn-3d-amber font-bold text-sm flex items-center gap-2">
+                  <span>🔊</span><span>Dengarkan Hadis</span>
+                </button>
+              </div>
+
+              <p class="font-arab text-3xl sm:text-4xl text-slate-900 font-bold leading-loose pt-2">
+                اِنَّ اللّٰهَ لَا يَنْظُرُ اِلٰى صُوَرِكُمْ وَاَمْوَالِكُمْ وَلٰكِنْ يَنْظُرُ اِلٰى قُلُوْبِكُمْ وَاَعْمَالِكُمْ
+              </p>
+
+              <p class="text-teal-800 font-bold italic text-base sm:text-lg">
+                "Innallāha lā yanẓuru ilā ṣuwarikum wa amwālikum, walākiy yanẓuru ilā qulūbikum wa a‘mālikum."
+              </p>
+
+              <div class="bg-white/90 p-4 rounded-2xl border border-teal-200 text-slate-800 font-semibold max-w-3xl mx-auto">
+                <strong>Artinya:</strong> "Sesungguhnya Allah tidak melihat kepada rupa (wajah) kalian dan harta kekayaan kalian, tetapi Allah melihat kepada <strong>hati kalian</strong> dan <strong>amal perbuatan kalian</strong>." (H.R. Muslim / Ahmad)
+              </div>
+            </div>
+
+            <!-- Perbandingan Pesan Hadis -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="bg-rose-50 border-2 border-rose-200 rounded-2xl p-5">
+                <h4 class="font-bold text-rose-900 text-lg mb-2">✗ Yang TIDAK Dilihat Allah:</h4>
+                <ul class="space-y-2 text-rose-950 font-semibold">
+                  <li>• Bentuk rupa, warna kulit, atau suku bangsa</li>
+                  <li>• Banyaknya harta kekayaan atau mainan mahal</li>
+                </ul>
+              </div>
+              <div class="bg-emerald-50 border-2 border-emerald-200 rounded-2xl p-5">
+                <h4 class="font-bold text-emerald-900 text-lg mb-2">✓ Yang DILIhat Allah:</h4>
+                <ul class="space-y-2 text-emerald-950 font-semibold">
+                  <li>• Kebersihan &amp; ketulusan <strong>Hati</strong> (Iman &amp; Takwa)</li>
+                  <li>• Kebaikan <strong>Amal Perbuatan</strong> (Akhlak Mulia)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      return `
+        <div class="space-y-6 page-enter">
+          <!-- Header Materi -->
+          <div class="bg-white rounded-[26px] p-5 sm:p-6 shadow-sm border-2 border-sky-100">
+            <h2 class="text-2xl sm:text-3xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+              <span>📖</span><span>Materi Inti Pembelajaran</span>
+            </h2>
+
+            <!-- Navigasi Sub-Bab A - E -->
+            <div class="grid grid-cols-2 sm:grid-cols-5 gap-2.5">
+              ${MATERI_SECTIONS.map((sec, idx) => `
+                <button onclick="selectMateriTab(${idx})" class="touch-target p-3 rounded-2xl text-left font-bold border-2 flex flex-col justify-between transition-all ${activeTab === idx ? 'bg-teal-600 text-white border-teal-700 shadow-md' : 'bg-sky-50/70 text-slate-700 border-sky-200 hover:bg-sky-100'}">
+                  <div class="flex items-center justify-between w-full">
+                    <span class="px-2 py-0.5 rounded-lg text-xs font-extrabold ${activeTab === idx ? 'bg-amber-400 text-slate-900' : 'bg-white text-teal-800'}">Bagian ${sec.code}</span>
+                    <span>${state.completedMateri[idx] ? '✅' : sec.icon}</span>
+                  </div>
+                  <span class="text-xs sm:text-sm mt-2 leading-snug">${sec.title}</span>
+                </button>
+              `).join('')}
+            </div>
+          </div>
+
+          <!-- Konten Sub-Bab Terpilih -->
+          <div class="bg-white rounded-[26px] p-5 sm:p-8 shadow-md border-2 border-sky-100">
+            ${tabContent}
+
+            <!-- Tombol Tandai Selesai & Lanjut Sub-Bab -->
+            <div class="mt-8 pt-5 border-t-2 border-slate-100 flex flex-wrap items-center justify-between gap-4">
+              <button onclick="markMateriComplete(${activeTab})" class="touch-target px-6 py-3.5 rounded-2xl ${state.completedMateri[activeTab] ? 'bg-green-100 text-green-800 border-2 border-green-400' : 'btn-3d-teal'} font-bold flex items-center gap-2">
+                <span>${state.completedMateri[activeTab] ? '✓ Bagian Ini Sudah Dipelajari' : '⭐ Tandai Selesai (+15 Poin)'}</span>
+              </button>
+
+              ${activeTab < 4 ? `
+                <button onclick="selectMateriTab(${activeTab + 1})" class="touch-target px-6 py-3.5 rounded-2xl btn-3d-blue font-bold flex items-center gap-2">
+                  <span>Lanjut Bagian ${MATERI_SECTIONS[activeTab + 1].code}</span><span>➡️</span>
+                </button>
+              ` : `
+                <button onclick="navigateTo('aktivitas')" class="touch-target px-6 py-3.5 rounded-2xl btn-3d-amber font-bold flex items-center gap-2">
+                  <span>🎯 Lanjut ke Aktivitas Interaktif</span><span>➡️</span>
+                </button>
+              `}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function selectMateriTab(idx) {
+      playSfx('click');
+      state.materiTab = idx;
+      saveState();
+      renderApp();
+      if (idx === 2) {
+        setTimeout(initWritingCanvas, 50);
+      }
+    }
+
+    function markMateriComplete(idx) {
+      if (!state.completedMateri[idx]) {
+        state.completedMateri[idx] = true;
+        playSfx('success');
+        addScore(15);
+        saveState();
+        renderApp();
+        if (idx === 2) setTimeout(initWritingCanvas, 50);
+      }
+    }
+
+    function toggleHafalan(idx) {
+      state.hafalanChecked[idx] = !state.hafalanChecked[idx];
+      if (state.hafalanChecked[idx]) {
+        playSfx('success');
+        addScore(10);
+      } else {
+        playSfx('click');
+      }
+      saveState();
+      renderApp();
+    }
+
+    /* ==========================================================================
+       KANVAS MENULIS HURUF ARAB (SUB-BAB C)
+       ========================================================================== */
+    let penColor = '#0F172A';
+    function setPenColor(color) {
+      playSfx('click');
+      penColor = color;
+    }
+
+    function initWritingCanvas() {
+      const canvas = document.getElementById('writingCanvas');
+      if (!canvas) return;
+      const rect = canvas.parentElement.getBoundingClientRect();
+      canvas.width = rect.width;
+      canvas.height = rect.height;
+      const ctx = canvas.getContext('2d');
+      ctx.lineWidth = 4.5;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+
+      let drawing = false;
+
+      function getPos(e) {
+        const r = canvas.getBoundingClientRect();
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        return { x: clientX - r.left, y: clientY - r.top };
+      }
+
+      function startDraw(e) {
+        drawing = true;
+        const pos = getPos(e);
+        ctx.beginPath();
+        ctx.moveTo(pos.x, pos.y);
+      }
+
+      function draw(e) {
+        if (!drawing) return;
+        e.preventDefault();
+        const pos = getPos(e);
+        ctx.strokeStyle = penColor;
+        ctx.lineTo(pos.x, pos.y);
+        ctx.stroke();
+      }
+
+      function endDraw() {
+        drawing = false;
+      }
+
+      canvas.onmousedown = startDraw;
+      canvas.onmousemove = draw;
+      canvas.onmouseup = endDraw;
+      canvas.onmouseleave = endDraw;
+
+      canvas.ontouchstart = startDraw;
+      canvas.ontouchmove = draw;
+      canvas.ontouchend = endDraw;
+    }
+
+    function clearWritingCanvas() {
+      playSfx('click');
+      const canvas = document.getElementById('writingCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    function finishWritingPractice() {
+      playSfx('success');
+      addScore(15);
+      showModal(
+        'Tulisan yang Bagus! (+15 Poin)',
+        'Teruslah berlatih menulis huruf Al-Qur\'an di buku tulismu agar tulisanmu semakin rapi dan indah!',
+        'bangga'
+      );
+    }
+
+    /* ==========================================================================
+       7. RENDER HALAMAN 3: AKTIVITAS INTERAKTIF (MATCHING & SUSUN POTONGAN AYAT)
+       ========================================================================== */
+    const MATCHING_PAIRS = [
+      { id: 'm1', arab: 'يٰٓاَيُّهَا النَّاسُ', arti: 'Wahai manusia' },
+      { id: 'm2', arab: 'شُعُوْبًا وَّقَبَاۤىِٕلَ', arti: 'Berbangsa-bangsa dan bersuku-suku' },
+      { id: 'm3', arab: 'لِتَعَارَفُوْا', arti: 'Agar kamu saling mengenal' },
+      { id: 'm4', arab: 'اَتْقٰىكُمْ', arti: 'Orang yang paling bertakwa di antara kamu' },
+      { id: 'm5', arab: 'قُلُوْبِكُمْ وَاَعْمَالِكُمْ', arti: 'Hati kalian dan amal perbuatan kalian' }
+    ];
+
+    const PUZZLE_CORRECT = [
+      'يٰٓاَيُّهَا النَّاسُ اِنَّا خَلَقْنٰكُمْ',
+      'مِّنْ ذَكَرٍ وَّاُنْثٰى',
+      'وَجَعَلْنٰكُمْ شُعُوْبًا وَّقَبَاۤىِٕلَ',
+      'لِتَعَارَفُوْا ۚ اِنَّ اَكْرَمَكُمْ عِنْدَ اللّٰهِ اَتْقٰىكُمْ'
+    ];
+
+    let selectedLeftMatch = null;
+    let userPuzzleOrder = [];
+
+    function renderAktivitas() {
+      if (userPuzzleOrder.length === 0 && !state.puzzleSolved) {
+        userPuzzleOrder = [];
+      }
+
+      const availableTiles = PUZZLE_CORRECT.filter(item => !userPuzzleOrder.includes(item));
+
+      return `
+        <div class="space-y-8 page-enter">
+          <!-- AKTIVITAS 1: MATCHING KOSA KATA ARAB - ARTI -->
+          <section class="bg-white rounded-[26px] p-6 sm:p-8 shadow-md border-2 border-sky-100">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-5">
+              <div>
+                <span class="px-3.5 py-1 rounded-full bg-teal-100 text-teal-900 font-extrabold text-xs">Aktivitas 1 • Matching</span>
+                <h2 class="text-2xl font-bold text-slate-800 mt-1">🎯 Pasangkan Lafal Arab dengan Artinya!</h2>
+                <p class="text-slate-600 text-sm sm:text-base">Klik satu kartu Arab di sebelah kanan/atas, lalu klik kartu arti yang tepat!</p>
+              </div>
+              <span class="px-4 py-2 rounded-2xl bg-amber-100 text-amber-900 font-bold text-sm">
+                Terpasang: ${state.matchingSolved.length} / ${MATCHING_PAIRS.length}
+              </span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Kolom Lafal Arab -->
+              <div class="space-y-3">
+                <h3 class="font-bold text-slate-700 text-center bg-sky-50 py-2 rounded-xl">1. Pilih Lafal Arab</h3>
+                ${MATCHING_PAIRS.map(p => {
+                  const isSolved = state.matchingSolved.includes(p.id);
+                  const isSelected = selectedLeftMatch === p.id;
+                  return `
+                    <button 
+                      onclick="selectMatchLeft('${p.id}')" 
+                      ${isSolved ? 'disabled' : ''}
+                      class="touch-target w-full p-4 rounded-2xl font-arab text-2xl sm:text-3xl font-bold border-2 transition-all ${
+                        isSolved ? 'bg-green-100 border-green-500 text-green-900 opacity-80' :
+                        isSelected ? 'bg-amber-200 border-amber-500 text-slate-900 scale-[1.02] shadow-md' :
+                        'bg-white border-sky-200 hover:bg-sky-50 text-slate-900'
+                      }">
+                      ${isSolved ? '✓ ' : ''}${p.arab}
+                    </button>
+                  `;
+                }).join('')}
+              </div>
+
+              <!-- Kolom Arti Bahasa Indonesia (Diacak Urutannya) -->
+              <div class="space-y-3">
+                <h3 class="font-bold text-slate-700 text-center bg-amber-50 py-2 rounded-xl">2. Pilih Arti yang Tepat</h3>
+                ${[MATCHING_PAIRS[2], MATCHING_PAIRS[4], MATCHING_PAIRS[0], MATCHING_PAIRS[3], MATCHING_PAIRS[1]].map(p => {
+                  const isSolved = state.matchingSolved.includes(p.id);
+                  return `
+                    <button 
+                      onclick="selectMatchRight('${p.id}')" 
+                      ${isSolved ? 'disabled' : ''}
+                      class="touch-target w-full p-4 rounded-2xl text-left font-bold text-base sm:text-lg border-2 transition-all ${
+                        isSolved ? 'bg-green-100 border-green-500 text-green-900 opacity-80' :
+                        'bg-white border-amber-200 hover:bg-amber-50 text-slate-800'
+                      }">
+                      ${isSolved ? '✓ ' : '👉 '}${p.arti}
+                    </button>
+                  `;
+                }).join('')}
+              </div>
+            </div>
+          </section>
+
+          <!-- AKTIVITAS 2: SUSUN POTONGAN AYAT (TAP-TO-ORDER RAMAH FID) -->
+          <section class="bg-white rounded-[26px] p-6 sm:p-8 shadow-md border-2 border-sky-100">
+            <div class="mb-5">
+              <span class="px-3.5 py-1 rounded-full bg-amber-100 text-amber-900 font-extrabold text-xs">Aktivitas 2 • Susun Ayat</span>
+              <h2 class="text-2xl font-bold text-slate-800 mt-1">🧩 Susun Potongan Q.S. Al-Ḥujurāt/49:13 Secara Berurutan!</h2>
+              <p class="text-slate-600 text-sm sm:text-base">Ketuk potongan ayat dari urutan <strong>pertama</strong> hingga <strong>keempat</strong>.</p>
+            </div>
+
+            <!-- Area Hasil Susunan Siswa -->
+            <div class="bg-sky-50/70 border-2 border-dashed border-sky-300 rounded-3xl p-4 sm:p-5 min-h-[140px] space-y-2.5 mb-5">
+              <span class="text-xs font-extrabold uppercase text-sky-800 block mb-2">Urutan Susunanmu:</span>
+              ${state.puzzleSolved ? PUZZLE_CORRECT.map((line, i) => `
+                <div class="bg-green-100 border-2 border-green-500 rounded-2xl p-3.5 flex items-center justify-between gap-3">
+                  <span class="px-3 py-1 rounded-xl bg-green-600 text-white font-bold text-sm">Urutan ${i + 1}</span>
+                  <span class="font-arab text-2xl sm:text-3xl text-green-950 font-bold text-right">${line}</span>
+                </div>
+              `).join('') : userPuzzleOrder.length === 0 ? `
+                <p class="text-slate-400 text-center py-6 font-semibold">Belum ada potongan yang dipilih. Ketuk potongan di bawah ini!</p>
+              ` : userPuzzleOrder.map((line, i) => `
+                <div class="bg-white border-2 border-teal-400 rounded-2xl p-3.5 flex items-center justify-between gap-3 shadow-xs">
+                  <button onclick="removePuzzlePiece(${i})" class="touch-target !min-w-[48px] !min-h-[48px] px-3 rounded-xl bg-rose-100 text-rose-800 font-bold text-xs">
+                    ✕ Batal
+                  </button>
+                  <span class="font-arab text-2xl sm:text-3xl text-slate-900 font-bold text-right flex-1">${line}</span>
+                  <span class="px-3 py-1 rounded-xl bg-teal-600 text-white font-bold text-sm">#${i + 1}</span>
+                </div>
+              `).join('')}
+            </div>
+
+            <!-- Pilihan Potongan Acak -->
+            ${!state.puzzleSolved ? `
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-5">
+                ${[PUZZLE_CORRECT[2], PUZZLE_CORRECT[0], PUZZLE_CORRECT[3], PUZZLE_CORRECT[1]]
+                  .filter(item => availableTiles.includes(item))
+                  .map(item => `
+                    <button onclick="addPuzzlePiece('${item.replace(/'/g, "\\'")}')" class="touch-target p-4 rounded-2xl bg-amber-50 hover:bg-amber-100 border-2 border-amber-300 font-arab text-2xl text-right font-bold text-slate-900 shadow-xs">
+                      ${item}
+                    </button>
+                  `).join('')}
+              </div>
+
+              <div class="flex flex-wrap gap-3">
+                <button onclick="checkPuzzleOrder()" class="touch-target px-6 py-3.5 rounded-2xl btn-3d-teal font-bold text-lg">
+                  ✅ Periksa Susunan Ayat
+                </button>
+                <button onclick="resetPuzzleOrder()" class="touch-target px-5 py-3.5 rounded-2xl bg-slate-100 text-slate-700 border-2 border-slate-300 font-bold">
+                  🔄 Ulangi Susunan
+                </button>
+              </div>
+            ` : `
+              <div class="bg-green-100 border-2 border-green-500 rounded-2xl p-4 text-green-900 font-bold flex items-center justify-between">
+                <span>🎉 Hebat! Kamu berhasil menyusun potongan Q.S. Al-Ḥujurāt/49:13 dengan tepat!</span>
+                <button onclick="navigateTo('game')" class="touch-target px-5 py-2.5 rounded-xl btn-3d-amber font-bold text-sm">
+                  🎮 Main Game Yuk!
+                </button>
+              </div>
+            `}
+          </section>
+        </div>
+      `;
+    }
+
+    function selectMatchLeft(id) {
+      playSfx('click');
+      selectedLeftMatch = id;
+      renderApp();
+    }
+
+    function selectMatchRight(rightId) {
+      if (!selectedLeftMatch) {
+        showModal('Pilih Lafal Arab Dulu Ya!', 'Ketuk salah satu kotak lafal Arab di sebelah kiri/atas terlebih dahulu, lalu ketuk artinya.', 'berpikir');
+        return;
+      }
+      if (selectedLeftMatch === rightId) {
+        playSfx('success');
+        if (!state.matchingSolved.includes(rightId)) {
+          state.matchingSolved.push(rightId);
+          addScore(10);
+        }
+        selectedLeftMatch = null;
+        saveState();
+        renderApp();
+        if (state.matchingSolved.length === MATCHING_PAIRS.length) {
+          showModal('Luar Biasa! Semua Cocok! (+50 Poin)', 'Kamu telah berhasil memasangkan seluruh lafal Q.S. Al-Ḥujurāt/49:13 dan Hadis Keragaman dengan artinya!', 'bangga');
+        }
+      } else {
+        playSfx('error');
+        selectedLeftMatch = null;
+        renderApp();
+        showModal('Belum Pas, Coba Lagi!', 'Perhatikan kata kuncinya ya! Misalnya <em>Litata\'ārafū</em> artinya saling mengenal. Yuk coba pasangkan lagi!', 'berpikir');
+      }
+    }
+
+    function addPuzzlePiece(text) {
+      playSfx('click');
+      if (!userPuzzleOrder.includes(text)) {
+        userPuzzleOrder.push(text);
+        renderApp();
+      }
+    }
+
+    function removePuzzlePiece(index) {
+      playSfx('click');
+      userPuzzleOrder.splice(index, 1);
+      renderApp();
+    }
+
+    function resetPuzzleOrder() {
+      playSfx('click');
+      userPuzzleOrder = [];
+      renderApp();
+    }
+
+    function checkPuzzleOrder() {
+      if (userPuzzleOrder.length < PUZZLE_CORRECT.length) {
+        showModal('Belum Lengkap!', 'Pilih semua 4 potongan ayat terlebih dahulu sebelum memeriksa jawabanmu ya!', 'berpikir');
+        return;
+      }
+      const isCorrect = userPuzzleOrder.every((val, idx) => val === PUZZLE_CORRECT[idx]);
+      if (isCorrect) {
+        playSfx('fanfare');
+        state.puzzleSolved = true;
+        addScore(30);
+        saveState();
+        renderApp();
+        showModal('Masya Allah, Urutan Sempurna! (+30 Poin)', 'Kamu sudah hafal alur bacaan Q.S. Al-Ḥujurāt/49:13 dari awal hingga akhir!', 'bangga');
+      } else {
+        playSfx('error');
+        showModal('Urutannya Masih Tertukar', 'Petunjuk: Ayat dimulai dengan seruan <em>"Yā ayyuhan-nāsu..."</em> (Wahai manusia) dan diakhiri dengan <em>"...atqākum"</em>. Yuk atur ulang!', 'berpikir');
+      }
+    }
+
+    /* ==========================================================================
+       8. RENDER HALAMAN 4: GAME EDUKATIF ("TANGKAP BINTANG KERAGAMAN")
+       ========================================================================== */
+    let gameActive = false;
+    let gameTimer = 30;
+    let gamePoints = 0;
+    let gameInterval = null;
+    let spawnInterval = null;
+
+    const GAME_ITEMS = [
+      { text: 'Menghormati Teman Beda Suku', good: true, icon: '🤝' },
+      { text: 'Berteman Tanpa Pilih-Pilih', good: true, icon: '🌟' },
+      { text: 'Rajin Ibadah & Bertakwa', good: true, icon: '🕌' },
+      { text: 'Saling Mengenal (Litata\'arafu)', good: true, icon: '🌍' },
+      { text: 'Menolong Teman Kesusahan', good: true, icon: '💖' },
+      { text: 'Mengejek Logat Bahasa Teman', good: false, icon: '🚫' },
+      { text: 'Sombong Karena Harta', good: false, icon: '😤' },
+      { text: 'Membeda-bedakan Warna Kulit', good: false, icon: '👎' }
+    ];
+
+    function renderGame() {
+      return `
+        <div class="space-y-6 page-enter">
+          <div class="bg-white rounded-[26px] p-6 sm:p-8 shadow-md border-2 border-sky-100">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-5">
+              <div>
+                <span class="px-3.5 py-1 rounded-full bg-amber-100 text-amber-900 font-extrabold text-xs">Game Edukasi Interaktif</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-800 mt-1">🎮 Tangkap Sikap Terpuji Keragaman!</h2>
+                <p class="text-slate-600 text-sm sm:text-base">
+                  Ketuk kartu <strong>Sikap Terpuji (+10 Poin)</strong> dan hindari <strong>Sikap Tercela (-5 Poin)</strong> dalam waktu 30 detik!
+                </p>
+              </div>
+              <div class="flex items-center gap-3 shrink-0">
+                <div class="bg-sky-100 border-2 border-sky-300 px-4 py-2 rounded-2xl text-center">
+                  <span class="text-xs font-bold text-sky-800 block">⏱️ Waktu</span>
+                  <span id="gameTimeDisplay" class="font-display font-bold text-2xl text-sky-950">${gameTimer}d</span>
+                </div>
+                <div class="bg-amber-100 border-2 border-amber-300 px-4 py-2 rounded-2xl text-center">
+                  <span class="text-xs font-bold text-amber-800 block">🎯 Skor Game</span>
+                  <span id="gameScoreDisplay" class="font-display font-bold text-2xl text-amber-950">${gamePoints}</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Arena Permainan -->
+            <div id="gameArena" class="relative w-full min-h-[340px] rounded-3xl bg-gradient-to-b from-sky-100 via-teal-50 to-emerald-100 border-4 border-teal-400 p-4 overflow-hidden flex flex-col items-center justify-center">
+              <div id="gameOverlay" class="text-center space-y-4 max-w-md z-10 bg-white/95 p-6 rounded-3xl shadow-lg border-2 border-teal-200">
+                ${getMascotSVG('senang', 95)}
+                <h3 class="text-2xl font-bold text-slate-800">Siap Bermain?</h3>
+                <p class="text-slate-600 text-sm sm:text-base">
+                  Rekor Terbaikmu: <strong class="text-teal-700">${state.gameHighScore} Poin</strong>. Ketuk semua perilaku yang sesuai dengan pesan Q.S. Al-Ḥujurāt/49:13!
+                </p>
+                <button onclick="startEduGame()" class="touch-target w-full px-6 py-4 rounded-2xl btn-3d-amber font-display font-bold text-xl">
+                  ▶️ MULAI PERMAINAN
+                </button>
+              </div>
+              <div id="gameCardsContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 w-full"></div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function startEduGame() {
+      playSfx('click');
+      gameActive = true;
+      gameTimer = 30;
+      gamePoints = 0;
+      const overlay = document.getElementById('gameOverlay');
+      if (overlay) overlay.classList.add('hidden');
+      updateGameHUD();
+      spawnGameBatch();
+
+      clearInterval(gameInterval);
+      clearInterval(spawnInterval);
+
+      gameInterval = setInterval(() => {
+        if (state.currentPage !== 'game') {
+          stopEduGame(false);
+          return;
+        }
+        gameTimer--;
+        updateGameHUD();
+        if (gameTimer <= 0) {
+          stopEduGame(true);
+        }
+      }, 1000);
+
+      spawnInterval = setInterval(() => {
+        if (gameActive && state.currentPage === 'game') {
+          spawnGameBatch();
+        }
+      }, 2800);
+    }
+
+    function spawnGameBatch() {
+      const container = document.getElementById('gameCardsContainer');
+      if (!container) return;
+      const shuffled = [...GAME_ITEMS].sort(() => Math.random() - 0.5).slice(0, 6);
+      container.innerHTML = shuffled.map((item, idx) => `
+        <button 
+          onclick="handleGameTap(this, ${item.good})" 
+          class="touch-target p-4 rounded-2xl bg-white hover:bg-sky-50 border-2 border-sky-300 shadow-md flex items-center gap-3 text-left font-bold text-slate-800 page-enter">
+          <span class="text-3xl shrink-0">${item.icon}</span>
+          <span class="text-sm sm:text-base leading-snug">${item.text}</span>
+        </button>
+      `).join('');
+    }
+
+    function handleGameTap(btnEl, isGood) {
+      if (!gameActive || btnEl.disabled) return;
+      btnEl.disabled = true;
+      if (isGood) {
+        playSfx('success');
+        gamePoints += 10;
+        btnEl.className = 'touch-target p-4 rounded-2xl bg-green-500 text-white border-2 border-green-700 shadow-md flex items-center gap-3 text-left font-bold anim-bounce';
+        btnEl.innerHTML = `<span class="text-2xl">✓</span><span>Benar! +10 Poin</span>`;
+      } else {
+        playSfx('error');
+        gamePoints = Math.max(0, gamePoints - 5);
+        btnEl.className = 'touch-target p-4 rounded-2xl bg-rose-500 text-white border-2 border-rose-700 shadow-md flex items-center gap-3 text-left font-bold anim-shake';
+        btnEl.innerHTML = `<span class="text-2xl">✗</span><span>Sikap Tercela! -5</span>`;
+      }
+      updateGameHUD();
+    }
+
+    function updateGameHUD() {
+      const tEl = document.getElementById('gameTimeDisplay');
+      const sEl = document.getElementById('gameScoreDisplay');
+      if (tEl) tEl.textContent = `${gameTimer}d`;
+      if (sEl) sEl.textContent = gamePoints;
+    }
+
+    function stopEduGame(showResultModal) {
+      gameActive = false;
+      clearInterval(gameInterval);
+      clearInterval(spawnInterval);
+      if (gamePoints > state.gameHighScore) {
+        state.gameHighScore = gamePoints;
+      }
+      if (gamePoints > 0) {
+        addScore(Math.min(50, gamePoints));
+      }
+      saveState();
+      if (showResultModal && state.currentPage === 'game') {
+        playSfx('fanfare');
+        renderApp();
+        showModal(
+          `Waktu Habis! Skor Game: ${gamePoints}`,
+          `Hebat! Kamu berhasil mengumpulkan <strong>${gamePoints} poin</strong> dalam permainan keragaman! Kamu bisa bermain lagi atau lanjut ke Latihan.`,
+          'bangga'
+        );
+      }
+    }
+
+    /* ==========================================================================
+       9. RENDER HALAMAN 5: LATIHAN DENGAN FEEDBACK LANGSUNG & COBA LAGI
+       ========================================================================== */
+    const LATIHAN_QUESTIONS = [
+      {
+        id: 'L1',
+        q: 'Potongan ayat "لِتَعَارَفُوْا" (lita‘ārafū) dalam Q.S. Al-Ḥujurāt/49:13 memiliki arti...',
+        options: ['Agar kamu saling berlomba', 'Agar kamu saling mengenal', 'Agar kamu saling menyayangi', 'Agar kamu saling membantu'],
+        correct: 1,
+        hint: 'Ingat tujuan Allah menciptakan manusia berbangsa-bangsa dan bersuku-suku!',
+        explain: 'Tepat! Lita‘ārafū artinya agar kamu saling mengenal satu sama lain.'
+      },
+      {
+        id: 'L2',
+        q: 'Menurut Q.S. Al-Ḥujurāt/49:13, manusia yang paling mulia di sisi Allah Swt. adalah orang yang paling...',
+        options: ['Kaya hartanya', 'Tinggi jabatannya', 'Bertakwa kepada Allah', 'Banyak sukunya'],
+        correct: 2,
+        hint: 'Perhatikan akhir ayat: "Inna akramakum ‘indallāhi atqākum".',
+        explain: 'Benar! Kemuliaan seseorang di hadapan Allah Swt. ditentukan oleh ketakwaannya.'
+      },
+      {
+        id: 'L3',
+        q: 'Dalam hadis tentang keragaman, dua hal yang dilihat oleh Allah Swt. dari setiap hamba-Nya adalah...',
+        options: ['Wajah dan pakaiannya', 'Hati dan amal perbuatannya', 'Harta dan rumahnya', 'Suku dan bahasanya'],
+        correct: 1,
+        hint: 'Ingat lafal "qulūbikum wa a‘mālikum" pada hadis keragaman!',
+        explain: 'Masya Allah! Allah melihat ketulusan hati (qulūb) dan kebaikan amal perbuatan (a‘māl) kita.'
+      },
+      {
+        id: 'L4',
+        q: 'Ketika ada teman baru dari luar pulau yang logat bicaranya berbeda dengan kita, sikap kita sebaiknya...',
+        options: ['Menertawakannya bersama teman', 'Menjauhinya karena berbeda daerah', 'Menyapanya dengan ramah dan mengajaknya berteman', 'Memintanya mengubah logat bicaranya'],
+        correct: 2,
+        hint: 'Bagaimana sikap anak muslim yang menghargai keragaman sebagai sunatullah?',
+        explain: 'Sangat baik! Menyapa dengan ramah adalah wujud nyata saling mengenal (lita‘ārafū).'
+      },
+      {
+        id: 'L5',
+        q: 'Hukum bacaan tajwid pada lafal "اِنَّ" (Inna) yang memiliki huruf nun bertasydid adalah...',
+        options: ['Izhar Halqi', 'Gunnah (mendengung)', 'Qalqalah', 'Ikhfa Syafawi'],
+        correct: 1,
+        hint: 'Setiap huruf Nun (نّ) atau Mim (مّ) yang bertasydid dibaca mendengung 2 harakat.',
+        explain: 'Hebat! Nun bertasydid dibaca mendengung (Gunnah) selama 2 harakat.'
+      }
+    ];
+
+    function renderLatihan() {
+      return `
+        <div class="space-y-6 page-enter">
+          <div class="bg-white rounded-[26px] p-6 sm:p-8 shadow-md border-2 border-sky-100">
+            <div class="flex items-center gap-4 mb-6">
+              ${getMascotSVG('senang', 85)}
+              <div>
+                <span class="px-3.5 py-1 rounded-full bg-sky-100 text-sky-900 font-extrabold text-xs">Asesmen For Learning</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-800 mt-1">📝 Latihan Mandiri dengan Umpan Balik</h2>
+                <p class="text-slate-600 text-sm sm:text-base">Pilih jawabanmu. Jika belum tepat, baca petunjuknya dan coba lagi sampai benar!</p>
+              </div>
+            </div>
+
+            <div class="space-y-6">
+              ${LATIHAN_QUESTIONS.map((item, qIdx) => {
+                const ans = state.latihanAnswers[item.id];
+                const isSolved = ans && ans.isCorrect;
+                return `
+                  <div class="p-5 rounded-3xl border-2 ${isSolved ? 'border-green-400 bg-green-50/30' : 'border-slate-200 bg-slate-50/50'} space-y-4">
+                    <div class="flex items-start gap-3">
+                      <span class="w-9 h-9 rounded-xl bg-teal-600 text-white font-bold flex items-center justify-center shrink-0">${qIdx + 1}</span>
+                      <p class="font-bold text-slate-800 text-base sm:text-lg">${item.q}</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      ${item.options.map((opt, oIdx) => {
+                        let btnStyle = 'bg-white border-slate-200 hover:bg-sky-50 text-slate-800';
+                        let prefix = ['A', 'B', 'C', 'D'][oIdx] + '.';
+                        if (ans && ans.selected === oIdx) {
+                          if (ans.isCorrect) {
+                            btnStyle = 'bg-green-600 border-green-700 text-white shadow-sm';
+                            prefix = '✓';
+                          } else {
+                            btnStyle = 'bg-rose-100 border-rose-500 text-rose-900 anim-shake';
+                            prefix = '✗';
+                          }
+                        }
+                        return `
+                          <button 
+                            onclick="answerLatihan('${item.id}', ${oIdx})" 
+                            ${isSolved ? 'disabled' : ''}
+                            class="touch-target p-3.5 rounded-2xl border-2 text-left font-bold flex items-center gap-3 ${btnStyle}">
+                            <span class="w-8 h-8 rounded-lg bg-black/10 flex items-center justify-center shrink-0 text-sm">${prefix}</span>
+                            <span>${opt}</span>
+                          </button>
+                        `;
+                      }).join('')}
+                    </div>
+
+                    ${ans ? `
+                      <div class="p-4 rounded-2xl border-2 ${ans.isCorrect ? 'bg-green-100 border-green-400 text-green-950' : 'bg-amber-100 border-amber-400 text-amber-950'} text-sm sm:text-base font-semibold">
+                        ${ans.isCorrect ? `✅ <strong>Bagus Sekali!</strong> ${item.explain}` : `💡 <strong>Petunjuk Korektif:</strong> ${item.hint} <em>Silakan pilih jawaban lain!</em>`}
+                      </div>
+                    ` : ''}
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function answerLatihan(qId, optIdx) {
+      const qObj = LATIHAN_QUESTIONS.find(q => q.id === qId);
+      if (!qObj) return;
+      const isCorrect = optIdx === qObj.correct;
+      const alreadySolved = state.latihanAnswers[qId] && state.latihanAnswers[qId].isCorrect;
+
+      state.latihanAnswers[qId] = { selected: optIdx, isCorrect };
+      if (isCorrect) {
+        playSfx('success');
+        if (!alreadySolved) addScore(10);
+      } else {
+        playSfx('error');
+      }
+      saveState();
+      renderApp();
+    }
+
+    /* ==========================================================================
+       10. RENDER HALAMAN 6: KUIS AKHIR (10 SOAL EVALUASI + PROGRESS BAR)
+       ========================================================================== */
+    const KUIS_QUESTIONS = [
+      {
+        q: 'Surah Al-Ḥujurāt merupakan surah ke-49 dalam Al-Qur\'an. Kata "Al-Ḥujurāt" artinya...',
+        options: ['Kamar-kamar', 'Barang yang berguna', 'Pertolongan', 'Manusia'],
+        correct: 0,
+        pembahasan: 'Al-Ḥujurāt artinya kamar-kamar, terdiri atas 18 ayat dan tergolong surah Madaniyah.'
+      },
+      {
+        q: 'Perhatikan potongan ayat berikut: "يٰٓاَيُّهَا النَّاسُ اِنَّا خَلَقْنٰكُمْ مِّنْ ذَكَرٍ وَّاُنْثٰى". Terjemahan yang tepat adalah...',
+        options: [
+          'Wahai manusia! Sungguh, Kami telah menciptakan kamu dari seorang laki-laki dan seorang perempuan',
+          'Sesungguhnya yang paling mulia di antara kamu di sisi Allah ialah orang yang paling bertakwa',
+          'Kemudian Kami jadikan kamu berbangsa-bangsa dan bersuku-suku',
+          'Sungguh, Allah Maha Mengetahui, Mahateliti'
+        ],
+        correct: 0,
+        pembahasan: 'Żakariw wa unṡā artinya seorang laki-laki (Nabi Adam a.s.) dan seorang perempuan (Hawa).'
+      },
+      {
+        q: 'Allah Swt. menciptakan manusia bersuku-suku dan berbangsa-bangsa dengan tujuan agar...',
+        options: ['Saling bersaing menjadi yang terkuat', 'Saling mengenal dan menjalin persaudaraan', 'Hidup terpisah sesuai sukunya saja', 'Membanggakan asal-usul daerahnya'],
+        correct: 1,
+        pembahasan: 'Tujuan utama keragaman adalah lita‘ārafū (saling mengenal dan bekerja sama dalam kebaikan).'
+      },
+      {
+        q: 'Perhatikan lafal berikut: "شُعُوْبًا وَّقَبَاۤىِٕلَ". Hukum bacaan tajwid pada tanwin bertemu huruf wawu (و) adalah...',
+        options: ['Izhar Halqi', 'Idgam Bighunnah', 'Idgam Bilaghunnah', 'Iqlab'],
+        correct: 1,
+        pembahasan: 'Tanwin bertemu huruf wawu (و) dibaca masuk dengan mendengung (Idgam Bighunnah).'
+      },
+      {
+        q: 'Lanjutan dari potongan ayat "اِنَّ اَكْرَمَكُمْ عِنْدَ اللّٰهِ ..." adalah...',
+        options: ['لِتَعَارَفُوْا', 'عَلِيْمٌ خَبِيْرٌ', 'اَتْقٰىكُمْ', 'وَاُنْثٰى'],
+        correct: 2,
+        pembahasan: 'Bunyi lengkapnya: Inna akramakum ‘indallāhi atqākum (yang paling bertakwa di antara kamu).'
+      },
+      {
+        q: 'Keragaman suku, budaya, dan bahasa di Indonesia merupakan ketetapan Allah Swt. yang disebut...',
+        options: ['Sunatullah', 'Qanaah', 'Tawaduk', 'Istikamah'],
+        correct: 0,
+        pembahasan: 'Keragaman adalah sunatullah (hukum/ketetapan Allah Swt. di alam semesta) yang harus disyukuri.'
+      },
+      {
+        q: 'Berdasarkan hadis tentang keragaman riwayat Ahmad/Muslim, Allah Swt. tidak melihat kepada...',
+        options: ['Hati dan amal manusia', 'Rupa wajah dan harta kekayaan', 'Keikhlasan dalam beribadah', 'Akhlak terhadap sesama'],
+        correct: 1,
+        pembahasan: 'Allah tidak menilai rupa fisik (ṣuwarikum) maupun harta (amwālikum), melainkan hati dan amal.'
+      },
+      {
+        q: 'Rina memiliki teman sebangku bernama Maria yang berbeda suku dan tradisi. Sikap Rina yang mencerminkan pengamalan Q.S. Al-Ḥujurāt/49:13 adalah...',
+        options: ['Memaksa Maria mengikuti tradisinya', 'Menghormati perbedaan dan bekerja sama saat piket kelas', 'Hanya mau berbicara saat jam pelajaran', 'Mengejek makanan khas daerah Maria'],
+        correct: 1,
+        pembahasan: 'Menghormati perbedaan dan tetap bekerja sama adalah wujud toleransi dan persaudaraan.'
+      },
+      {
+        q: 'Arti dari Asmaulhusna "Al-‘Alīm" dan "Al-Khabīr" pada penutup Q.S. Al-Ḥujurāt/49:13 adalah...',
+        options: ['Maha Pengasih dan Maha Penyayang', 'Maha Mengetahui dan Mahateliti', 'Maha Kuasa dan Maha Bijaksana', 'Maha Mendengar dan Maha Melihat'],
+        correct: 1,
+        pembahasan: 'Innallāha ‘alīmun khabīr artinya Sungguh, Allah Maha Mengetahui, Mahateliti.'
+      },
+      {
+        q: 'Manfaat membiasakan sikap menghargai keragaman di lingkungan sekolah adalah...',
+        options: ['Suasana kelas menjadi rukun, damai, dan nyaman', 'Timbulnya pertengkaran antarkelompok', 'Teman-teman menjadi saling curiga', 'Sulit bekerja sama dalam tugas kelompok'],
+        correct: 0,
+        pembahasan: 'Menghargai keragaman menumbuhkan kerukunan, persatuan, dan kenyamanan belajar bersama.'
+      }
+    ];
+
+    function renderKuis() {
+      const answeredCount = Object.keys(state.kuisAnswers).length;
+      const progressPct = Math.round((answeredCount / KUIS_QUESTIONS.length) * 100);
+
+      return `
+        <div class="space-y-6 page-enter">
+          <div class="bg-white rounded-[26px] p-6 sm:p-8 shadow-md border-2 border-sky-100">
+            <!-- Header & Progress Bar Kuis -->
+            <div class="space-y-4 mb-6">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <div>
+                  <span class="px-3.5 py-1 rounded-full bg-amber-100 text-amber-900 font-extrabold text-xs">Asesmen Of Learning • 10 Soal</span>
+                  <h2 class="text-2xl sm:text-3xl font-bold text-slate-800 mt-1">❓ Kuis Akhir Bab 1</h2>
+                </div>
+                <span class="font-display font-bold text-teal-700 text-lg">
+                  Terjawab: ${answeredCount} / ${KUIS_QUESTIONS.length} (${progressPct}%)
+                </span>
+              </div>
+
+              <!-- Progress Bar Visual -->
+              <div class="w-full h-4 bg-slate-100 rounded-full overflow-hidden border border-slate-200">
+                <div class="h-full bg-gradient-to-r from-teal-500 to-amber-400 transition-all duration-300" style="width: ${progressPct}%"></div>
+              </div>
+            </div>
+
+            <!-- Daftar 10 Soal -->
+            <div class="space-y-6">
+              ${KUIS_QUESTIONS.map((item, idx) => {
+                const chosen = state.kuisAnswers[idx];
+                return `
+                  <div class="p-5 rounded-3xl border-2 border-slate-200 bg-slate-50/40 space-y-3">
+                    <div class="flex items-start gap-3">
+                      <span class="w-9 h-9 rounded-xl bg-sky-600 text-white font-bold flex items-center justify-center shrink-0">${idx + 1}</span>
+                      <p class="font-bold text-slate-800 text-base sm:text-lg">${item.q}</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      ${item.options.map((opt, oIdx) => {
+                        let style = 'bg-white border-slate-200 hover:bg-sky-50 text-slate-800';
+                        let badge = ['A', 'B', 'C', 'D'][oIdx];
+
+                        if (!state.kuisSubmitted) {
+                          if (chosen === oIdx) {
+                            style = 'bg-teal-600 border-teal-700 text-white shadow-sm';
+                          }
+                        } else {
+                          if (oIdx === item.correct) {
+                            style = 'bg-green-600 border-green-700 text-white';
+                            badge = '✓';
+                          } else if (chosen === oIdx && chosen !== item.correct) {
+                            style = 'bg-rose-500 border-rose-700 text-white';
+                            badge = '✗';
+                          } else {
+                            style = 'bg-white border-slate-200 text-slate-400';
+                          }
+                        }
+
+                        return `
+                          <button 
+                            onclick="selectKuisAnswer(${idx}, ${oIdx})" 
+                            ${state.kuisSubmitted ? 'disabled' : ''}
+                            class="touch-target p-3.5 rounded-2xl border-2 text-left font-bold flex items-center gap-3 ${style}">
+                            <span class="w-8 h-8 rounded-lg bg-black/10 flex items-center justify-center shrink-0 text-sm">${badge}</span>
+                            <span>${opt}</span>
+                          </button>
+                        `;
+                      }).join('')}
+                    </div>
+
+                    ${state.kuisSubmitted ? `
+                      <div class="p-3.5 rounded-2xl bg-sky-50 border border-sky-200 text-sm text-sky-950 font-semibold">
+                        📘 <strong>Pembahasan:</strong> ${item.pembahasan}
+                      </div>
+                    ` : ''}
+                  </div>
+                `;
+              }).join('')}
+            </div>
+
+            <!-- Tombol Submit / Lihat Hasil -->
+            <div class="mt-8 pt-6 border-t-2 border-slate-100 flex flex-wrap items-center justify-between gap-4">
+              ${!state.kuisSubmitted ? `
+                <button onclick="submitKuis()" class="touch-target w-full sm:w-auto px-8 py-4 rounded-2xl btn-3d-amber font-display font-bold text-xl">
+                  🏁 Kumpulkan &amp; Lihat Nilai Kuis
+                </button>
+              ` : `
+                <div class="flex flex-wrap gap-3 w-full sm:w-auto">
+                  <button onclick="navigateTo('hasil')" class="touch-target px-6 py-4 rounded-2xl btn-3d-teal font-bold text-lg">
+                    🏆 Lihat Rapor &amp; Lencana Hasil
+                  </button>
+                  <button onclick="retryKuis()" class="touch-target px-5 py-4 rounded-2xl bg-slate-100 text-slate-800 border-2 border-slate-300 font-bold">
+                    🔄 Ulangi Kuis
+                  </button>
+                </div>
+              `}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function selectKuisAnswer(qIdx, oIdx) {
+      if (state.kuisSubmitted) return;
+      playSfx('click');
+      state.kuisAnswers[qIdx] = oIdx;
+      saveState();
+      renderApp();
+    }
+
+    function submitKuis() {
+      const answeredCount = Object.keys(state.kuisAnswers).length;
+      if (answeredCount < KUIS_QUESTIONS.length) {
+        showModal(
+          'Masih Ada Soal yang Kosong!',
+          `Kamu baru menjawab <strong>${answeredCount} dari ${KUIS_QUESTIONS.length} soal</strong>. Yuk lengkapi semua soal terlebih dahulu sebelum dikumpulkan!`,
+          'berpikir'
+        );
+        return;
+      }
+
+      state.kuisSubmitted = true;
+      if (state.kuisStartTime) {
+        state.kuisDurationSec = Math.max(10, Math.round((Date.now() - state.kuisStartTime) / 1000));
+      }
+
+      let correctCount = 0;
+      KUIS_QUESTIONS.forEach((q, idx) => {
+        if (state.kuisAnswers[idx] === q.correct) correctCount++;
+      });
+
+      addScore(correctCount * 10);
+      saveState();
+      playSfx('fanfare');
+      renderApp();
+      showModal(
+        `Kuis Selesai! Nilai Kamu: ${correctCount * 10}`,
+        `Kamu menjawab benar <strong>${correctCount} dari 10 soal</strong>! Yuk buka halaman <strong>Hasil</strong> untuk melihat lencana pencapaianmu.`,
+        correctCount >= 7 ? 'bangga' : 'senang'
+      );
+    }
+
+    function retryKuis() {
+      playSfx('click');
+      state.kuisAnswers = {};
+      state.kuisSubmitted = false;
+      state.kuisStartTime = Date.now();
+      saveState();
+      renderApp();
+    }
+
+    /* ==========================================================================
+       11. RENDER HALAMAN 7: HASIL BELAJAR & LENCANA PENCAPAIAN
+       ========================================================================== */
+    function renderHasil() {
+      let correctCount = 0;
+      KUIS_QUESTIONS.forEach((q, idx) => {
+        if (state.kuisAnswers[idx] === q.correct) correctCount++;
+      });
+      const kuisScore = state.kuisSubmitted ? correctCount * 10 : 0;
+      const wrongCount = state.kuisSubmitted ? (10 - correctCount) : 0;
+
+      let badgeTitle = 'Belum Mengerjakan Kuis';
+      let badgeIcon = '⏳';
+      let badgeDesc = 'Yuk kerjakan Kuis Akhir (10 soal) terlebih dahulu untuk mendapatkan lencana pencapaianmu!';
+      let mascotExpr = 'berpikir';
+
+      if (state.kuisSubmitted) {
+        if (kuisScore >= 90) {
+          badgeTitle = 'Luar Biasa! Duta Keragaman Teladan';
+          badgeIcon = '👑';
+          badgeDesc = 'Masya Allah! Pemahamanmu tentang Q.S. Al-Ḥujurāt/49:13 dan Hadis Keragaman sangat istimewa!';
+          mascotExpr = 'bangga';
+        } else if (kuisScore >= 70) {
+          badgeTitle = 'Hebat! Sahabat Qur\'ani';
+          badgeIcon = '🏅';
+          badgeDesc = 'Alhamdulillah, kamu sudah mencapai ketuntasan belajar dengan baik. Pertahankan semangatmu!';
+          mascotExpr = 'bangga';
+        } else {
+          badgeTitle = 'Tetap Semangat! Terus Berlatih';
+          badgeIcon = '🌱';
+          badgeDesc = 'Jangan berkecil hati! Yuk pelajari kembali bagian Materi yang belum dipahami lalu coba ulangi kuisnya.';
+          mascotExpr = 'senang';
+        }
+      }
+
+      return `
+        <div class="space-y-6 page-enter">
+          <div class="bg-white rounded-[28px] p-6 sm:p-8 shadow-md border-2 border-sky-100 text-center space-y-6">
+            <div class="flex flex-col items-center">
+              ${getMascotSVG(mascotExpr, 115)}
+              <span class="mt-3 px-4 py-1 rounded-full bg-teal-100 text-teal-900 font-extrabold text-sm">
+                Rapor Pencapaian Belajar • ${state.studentName || 'Peserta Didik Kelas 4'}
+              </span>
+              <h2 class="text-2xl sm:text-4xl font-bold text-slate-800 mt-2">${badgeIcon} ${badgeTitle}</h2>
+              <p class="text-slate-600 max-w-xl mx-auto mt-1">${badgeDesc}</p>
+            </div>
+
+            <!-- Kartu Statistik Skor -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto">
+              <div class="bg-amber-50 border-2 border-amber-300 rounded-2xl p-4">
+                <span class="text-xs font-extrabold text-amber-800 uppercase">Nilai Kuis</span>
+                <p class="font-display font-bold text-3xl sm:text-4xl text-amber-950 mt-1">${kuisScore}</p>
+              </div>
+              <div class="bg-green-50 border-2 border-green-300 rounded-2xl p-4">
+                <span class="text-xs font-extrabold text-green-800 uppercase">Jawaban Benar</span>
+                <p class="font-display font-bold text-3xl sm:text-4xl text-green-900 mt-1">${correctCount}</p>
+              </div>
+              <div class="bg-rose-50 border-2 border-rose-300 rounded-2xl p-4">
+                <span class="text-xs font-extrabold text-rose-800 uppercase">Perlu Diperbaiki</span>
+                <p class="font-display font-bold text-3xl sm:text-4xl text-rose-900 mt-1">${wrongCount}</p>
+              </div>
+              <div class="bg-sky-50 border-2 border-sky-300 rounded-2xl p-4">
+                <span class="text-xs font-extrabold text-sky-800 uppercase">Total Bintang</span>
+                <p class="font-display font-bold text-3xl sm:text-4xl text-sky-950 mt-1">⭐ ${state.score}</p>
+              </div>
+            </div>
+
+            <!-- Rekomendasi Belajar Jika Skor Rendah -->
+            ${state.kuisSubmitted && kuisScore < 70 ? `
+              <div class="bg-amber-50 border-2 border-amber-300 rounded-2xl p-5 max-w-2xl mx-auto text-left">
+                <h4 class="font-bold text-amber-950 text-lg mb-2">📌 Rekomendasi Penguatan Belajar:</h4>
+                <ul class="space-y-1.5 text-amber-900 text-sm sm:text-base font-semibold">
+                  <li>• Baca ulang <strong>Bagian B (Pesan Pokok)</strong> dan <strong>Bagian E (Hadis Keragaman)</strong>.</li>
+                  <li>• Mainkan kembali <strong>Aktivitas Matching</strong> untuk memperkuat pemahaman arti lafal.</li>
+                </ul>
+              </div>
+            ` : ''}
+
+            <!-- Ringkasan Materi yang Sudah Dipelajari -->
+            <div class="bg-teal-50/70 border-2 border-teal-200 rounded-3xl p-5 max-w-3xl mx-auto text-left">
+              <h3 class="font-bold text-teal-950 text-lg mb-3">📚 Ringkasan Inti Bab 1:</h3>
+              <ul class="space-y-2 text-slate-700 text-sm sm:text-base font-semibold">
+                <li>✅ <strong>Q.S. Al-Ḥujurāt/49:13</strong> menegaskan bahwa manusia diciptakan berbangsa-bangsa dan bersuku-suku agar <em>saling mengenal</em> (<em>litata'ārafū</em>).</li>
+                <li>✅ Ukuran kemuliaan manusia di sisi Allah Swt. bukanlah rupa atau harta, melainkan <strong>ketakwaan</strong>.</li>
+                <li>✅ <strong>Hadis tentang Keragaman</strong> mengajarkan bahwa Allah Swt. melihat <strong>hati</strong> dan <strong>amal perbuatan</strong> setiap hamba-Nya.</li>
+              </ul>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4 pt-2">
+              <button onclick="navigateTo('refleksi')" class="touch-target px-7 py-4 rounded-2xl btn-3d-amber font-bold text-lg">
+                💭 Lanjut ke Refleksi Diri ➡️
+              </button>
+              ${!state.kuisSubmitted ? `
+                <button onclick="navigateTo('kuis')" class="touch-target px-7 py-4 rounded-2xl btn-3d-teal font-bold text-lg">
+                  ❓ Kerjakan Kuis Sekarang
+                </button>
+              ` : ''}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    /* ==========================================================================
+       12. RENDER HALAMAN 8: REFLEKSI PESERTA DIDIK & PENUTUP MOTIVASI
+       ========================================================================== */
+    function renderRefleksi() {
+      const moods = [
+        { emoji: '🤩', label: 'Sangat Senang & Paham' },
+        { emoji: '😊', label: 'Senang Belajar' },
+        { emoji: '🤔', label: 'Masih Perlu Latihan' }
+      ];
+
+      return `
+        <div class="space-y-8 page-enter">
+          <!-- ASESMEN AS LEARNING: REFLEKSI DIRI -->
+          <section class="bg-white rounded-[28px] p-6 sm:p-8 shadow-md border-2 border-sky-100 space-y-6">
+            <div class="flex items-center gap-4">
+              ${getMascotSVG('senang', 85)}
+              <div>
+                <span class="px-3.5 py-1 rounded-full bg-purple-100 text-purple-900 font-extrabold text-xs">Asesmen As Learning</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-800 mt-1">💭 Refleksi Diri Peserta Didik</h2>
+                <p class="text-slate-600 text-sm sm:text-base">Ceritakan pengalaman belajarmu hari ini dengan jujur dan gembira!</p>
+              </div>
+            </div>
+
+            <!-- 1. Pilih Perasaan -->
+            <div class="space-y-3">
+              <label class="block font-bold text-slate-800 text-lg">1. Bagaimana perasaanmu setelah mempelajari Q.S. Al-Ḥujurāt/49:13 &amp; Hadis Keragaman?</label>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                ${moods.map(m => `
+                  <button onclick="setRefleksiMood('${m.label}')" class="touch-target p-4 rounded-2xl border-2 font-bold flex items-center justify-center gap-3 ${state.refleksi.mood === m.label ? 'bg-teal-600 text-white border-teal-700 shadow-md' : 'bg-sky-50 border-sky-200 text-slate-800 hover:bg-sky-100'}">
+                    <span class="text-3xl">${m.emoji}</span>
+                    <span>${m.label}</span>
+                  </button>
+                `).join('')}
+              </div>
+            </div>
+
+            <!-- 2. Isian Refleksi Singkat -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="space-y-1.5">
+                <label class="block font-bold text-slate-700 text-sm">2. Apa yang paling kamu sukai?</label>
+                <textarea rows="3" onchange="updateRefleksiField('liked', this.value)" placeholder="Contoh: Game keragaman dan audio ayat..." class="w-full p-3.5 rounded-2xl border-2 border-slate-200 focus:border-teal-500 focus:outline-none text-slate-800">${state.refleksi.liked}</textarea>
+              </div>
+              <div class="space-y-1.5">
+                <label class="block font-bold text-slate-700 text-sm">3. Bagian mana yang masih terasa sulit?</label>
+                <textarea rows="3" onchange="updateRefleksiField('hardPart', this.value)" placeholder="Contoh: Menghafal hukum tajwid..." class="w-full p-3.5 rounded-2xl border-2 border-slate-200 focus:border-teal-500 focus:outline-none text-slate-800">${state.refleksi.hardPart}</textarea>
+              </div>
+              <div class="space-y-1.5">
+                <label class="block font-bold text-slate-700 text-sm">4. Sikap baik apa yang akan kamu lakukan?</label>
+                <textarea rows="3" onchange="updateRefleksiField('nextGoal', this.value)" placeholder="Contoh: Menghormati semua teman di kelas..." class="w-full p-3.5 rounded-2xl border-2 border-slate-200 focus:border-teal-500 focus:outline-none text-slate-800">${state.refleksi.nextGoal}</textarea>
+              </div>
+            </div>
+
+            <button onclick="saveRefleksiAction()" class="touch-target px-7 py-4 rounded-2xl btn-3d-teal font-bold text-lg">
+              💌 Simpan Refleksi &amp; Dapatkan Pesan Motivasi
+            </button>
+          </section>
+
+          <!-- PENUTUP & MOTIVASI HANGAT -->
+          <section class="rounded-[28px] bg-gradient-to-r from-teal-700 to-sky-800 text-white p-6 sm:p-8 shadow-lg border-4 border-teal-400/40 flex flex-col md:flex-row items-center gap-6">
+            ${getMascotSVG('bangga', 115)}
+            <div class="space-y-3 flex-1 text-center md:text-left">
+              <h3 class="text-2xl sm:text-3xl font-bold text-amber-300">
+                Barakallahu Fiikum, ${state.studentName || 'Anak Hebat'}! 🌟
+              </h3>
+              <p class="text-sky-100 text-base sm:text-lg">
+                Terima kasih telah belajar dengan penuh semangat! Mari biasakan membaca Al-Qur'an dengan tartil setiap hari serta menghargai setiap perbedaan teman sebagai anugerah terindah dari Allah Swt.
+              </p>
+              <div class="pt-2 flex flex-wrap justify-center md:justify-start gap-3">
+                <button onclick="confirmResetAll()" class="touch-target px-5 py-3 rounded-2xl bg-white/20 hover:bg-white/30 text-white border-2 border-white/40 font-bold">
+                  🔄 Ulangi Media dari Awal
+                </button>
+                <button onclick="navigateTo('beranda')" class="touch-target px-5 py-3 rounded-2xl btn-3d-amber font-bold">
+                  🏠 Kembali ke Menu Utama
+                </button>
+              </div>
+              <p class="text-xs text-sky-200 pt-2">
+                Dikembangkan oleh <strong>Abu Rahmi</strong> • Tahun 2026 • Pendidikan Agama Islam SD Kelas 4
+              </p>
+            </div>
+          </section>
+        </div>
+      `;
+    }
+
+    function setRefleksiMood(label) {
+      playSfx('click');
+      state.refleksi.mood = label;
+      saveState();
+      renderApp();
+    }
+
+    function updateRefleksiField(key, val) {
+      state.refleksi[key] = val;
+      saveState();
+    }
+
+    function saveRefleksiAction() {
+      playSfx('success');
+      addScore(15);
+      saveState();
+      showModal(
+        'Terima Kasih atas Refleksimu! (+15 Poin)',
+        `Alhamdulillah, kesadaranmu dalam belajar sungguh membanggakan! Teruslah menjadi anak yang bertakwa dan menyayangi sesama tanpa membeda-bedakan.`,
+        'bangga'
+      );
+    }
+
+    function confirmResetAll() {
+      showModal(
+        'Ulangi Media dari Awal?',
+        'Semua skor, jawaban latihan, dan progres kuis akan diatur ulang menjadi nol agar kamu bisa belajar dari awal lagi.',
+        'berpikir',
+        `
+          <button onclick="executeResetAll()" class="touch-target px-5 py-3 rounded-2xl bg-rose-600 text-white font-bold flex-1">
+            Ya, Ulangi Semua
+          </button>
+          <button onclick="closeModal()" class="touch-target px-5 py-3 rounded-2xl bg-slate-200 text-slate-800 font-bold flex-1">
+            Batal
+          </button>
+        `
+      );
+    }
+
+    function executeResetAll() {
+      localStorage.removeItem('mpi_pai_kls4_bab1_v1');
+      state = { ...defaultState };
+      saveState();
+      closeModal();
+      renderApp();
+    }
+
+    /* ==========================================================================
+       13. RENDER HALAMAN 9: PETUNJUK PENGGUNAAN MEDIA
+       ========================================================================== */
+    function renderPetunjuk() {
+      const guides = [
+        { icon: '🏠', title: 'Beranda', desc: 'Halaman sampul, pengisian nama siswa, dan pertanyaan pemantik awal.' },
+        { icon: '📖', title: 'Materi', desc: 'Terdiri dari 5 bagian (A–E) dilengkapi audio pelafalan ayat dan papan latihan menulis.' },
+        { icon: '🎯', title: 'Aktivitas', desc: 'Permainan mencocokkan kosa kata dan menyusun urutan potongan Q.S. Al-Ḥujurāt/49:13.' },
+        { icon: '🎮', title: 'Game', desc: 'Game interaktif 30 detik menangkap sikap terpuji dalam keragaman.' },
+        { icon: '📝', title: 'Latihan', desc: '5 soal latihan formatif dengan petunjuk korektif jika jawaban belum tepat.' },
+        { icon: '❓', title: 'Kuis', desc: '10 soal evaluasi akhir dengan penilaian otomatis dan pembahasan lengkap.' },
+        { icon: '🏆', title: 'Hasil', desc: 'Rapor pencapaian skor, lencana penghargaan, dan ringkasan materi.' },
+        { icon: '💭', title: 'Refleksi', desc: 'Catatan refleksi perasaan dan komitmen sikap baik peserta didik.' }
+      ];
+
+      return `
+        <div class="space-y-6 page-enter">
+          <div class="bg-white rounded-[28px] p-6 sm:p-8 shadow-md border-2 border-sky-100 space-y-6">
+            <div class="flex items-center gap-4">
+              ${getMascotSVG('senang', 90)}
+              <div>
+                <span class="px-3.5 py-1 rounded-full bg-teal-100 text-teal-900 font-extrabold text-xs">Panduan Pengguna</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-800 mt-1">📋 Petunjuk Penggunaan Media</h2>
+                <p class="text-slate-600 text-sm sm:text-base">Media ini dirancang ramah sentuhan untuk <strong>Papan Interaktif (FID)</strong>, <strong>Laptop/Desktop</strong>, maupun <strong>Smartphone/Tablet</strong>.</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              ${guides.map(g => `
+                <div class="p-4 rounded-2xl bg-sky-50/70 border-2 border-sky-100 space-y-1.5">
+                  <div class="text-3xl">${g.icon}</div>
+                  <h3 class="font-bold text-slate-800 text-lg">${g.title}</h3>
+                  <p class="text-slate-600 text-sm">${g.desc}</p>
+                </div>
+              `).join('')}
+            </div>
+
+            <div class="bg-amber-50 border-2 border-amber-200 rounded-2xl p-5 text-sm sm:text-base text-amber-950 font-semibold">
+              ℹ️ <strong>Informasi Penyusun:</strong> Media Pembelajaran Interaktif ini disusun oleh <strong>Abu Rahmi</strong> untuk mata pelajaran Pendidikan Agama Islam dan Budi Pekerti SD Kelas 4 (Kurikulum Merdeka - Fase B).
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    /* ==========================================================================
+       14. RENDERER UTAMA & INISIALISASI APLIKASI
+       ========================================================================== */
+    function renderApp() {
+      if (state.currentPage !== 'game' && gameActive) {
+        stopEduGame(false);
+      }
+
+      const container = document.getElementById('appContent');
+      switch (state.currentPage) {
+        case 'beranda': container.innerHTML = renderBeranda(); break;
+        case 'materi': container.innerHTML = renderMateri(); break;
+        case 'aktivitas': container.innerHTML = renderAktivitas(); break;
+        case 'game': container.innerHTML = renderGame(); break;
+        case 'latihan': container.innerHTML = renderLatihan(); break;
+        case 'kuis': container.innerHTML = renderKuis(); break;
+        case 'hasil': container.innerHTML = renderHasil(); break;
+        case 'refleksi': container.innerHTML = renderRefleksi(); break;
+        case 'petunjuk': container.innerHTML = renderPetunjuk(); break;
+        default: container.innerHTML = renderBeranda();
+      }
+
+      updateNavHighlight();
+      updateAudioUI();
+      document.getElementById('globalScore').textContent = state.score;
+
+      if (state.currentPage === 'materi' && state.materiTab === 2) {
+        setTimeout(initWritingCanvas, 50);
+      }
+    }
+
+    window.addEventListener('resize', () => {
+      if (state.currentPage === 'materi' && state.materiTab === 2) {
+        initWritingCanvas();
+      }
+    });
+
+    window.onload = function () {
+      renderApp();
+    };
+  </script>
+</body>
+</html>
